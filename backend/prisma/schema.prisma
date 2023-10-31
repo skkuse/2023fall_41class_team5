@@ -11,9 +11,12 @@ datasource db {
 }
 
 model User {
-  id              Int     @id @default(autoincrement())
-  loginId         String  @unique
+  id              Int       @id @default(autoincrement())
+  loginId         String    @unique
   password        String
+  email           String    @unique
+  name            String
+  birthDay        DateTime  @db.Date
 
   executionInfos  ExecutionInfos[]
 

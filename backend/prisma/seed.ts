@@ -8,14 +8,23 @@ async function seed() {
     {
       loginId: 'test01',
       password: await bcrypt.hash('1234', 10),
+      email: 'test01@gmail.com',
+      name: 'test01',
+      birthDay: new Date('2000-01-01'),
     },
     {
       loginId: 'test02',
       password: await bcrypt.hash('1234', 10),
+      email: 'test02@gmail.com',
+      name: 'test02',
+      birthDay: new Date('2000-01-01'),
     },
     {
       loginId: 'test03',
-      password: await bcrypt.hash('test', 10),
+      password: await bcrypt.hash('1234', 10),
+      email: 'test03@gmail.com',
+      name: 'test03',
+      birthDay: new Date('2000-01-01'),
     },
   ];
 
