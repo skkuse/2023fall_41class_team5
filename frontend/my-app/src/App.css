@@ -1,0 +1,124 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.layout{
+  /* width: 100%; */
+  height: 4000px;
+  margin: 50px 8%;
+
+  /* test */
+  border: 1px solid #ddd;
+  background-color: burlywood;
+}
+
+
+
+.header{
+  
+}
+
+.login{
+  height : 40px;
+  text-align: right;
+  background-color: cornflowerblue;
+}
+
+.siteName{
+  height : 128px;
+  background-color: #999;
+}
+
+.content{
+
+}
+
+.codeInput{
+  height: 500px;
+  background-color: aqua;
+}
+
+.result{
+
+}
+
+.horizontalLayout{
+  height: 750px;
+}
+
+.details{
+  background-color: #ccc;
+  
+}
+
+.resultGrid{
+  
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "a a b b c c" "d d d e e e" "f f f f f f"; /* 3개의 열을 가진 그리드를 생성합니다. */
+  gap: 10px; /* 그리드 아이템 간의 간격을 설정합니다. */
+}
+
+.grid-itemA {
+  background-color: #dd8585;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #999;
+  height: 236px;
+}
+
+.grid-itemB {
+  background-color: #dd8585;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #999;
+  height: 162px;
+}
+
+.grid-itemC {
+  background-color: #dd8585;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #999;
+  height: 842px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
