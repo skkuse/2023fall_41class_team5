@@ -1,0 +1,22 @@
+[
+    {
+        "provider": "Unknown",
+        "PUE": "1.67",
+        "source": "2019 https://journal.uptimeinstitute.com/is-pue-actually-going-up/"
+    },
+    {
+        "provider": "gcp",
+        "PUE": "1.11",
+        "source": "https://www.google.co.uk/about/datacenters/efficiency/"
+    },
+    {
+        "provider": "aws",
+        "PUE": "1.2",
+        "source": "https://aws.amazon.com/about-aws/sustainability/"
+    },
+    {
+        "provider": "azure",
+        "PUE": "1.125",
+        "source": "but only for new datacentres https://azure.microsoft.com/en-gb/global-infrastructure/"
+    }
+]
