@@ -8,8 +8,8 @@ export class CalculateController {
 
     @Post('execute')
     @ApiOperation({ summary: '탄소 배출량 계산' })
-    async executeCode(@Body() code: { javaCode: string }): Promise<string> {
+    async executeCode(@Body() code: { javaCode: string }): Promise<number> {
         const result = await this.calculateService.executeCodeAndGetTime(code.javaCode);
-        return `Execution Time: ${result} ms`;
+        return result;
     }
 }
