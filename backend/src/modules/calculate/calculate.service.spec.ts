@@ -16,7 +16,7 @@ describe('CalculateService', () => {
   });
 
   it('should execute Java code and return execution time', async () => {
-    const javaCode = 'public class HelloWorld { public static void main(String[] args) {System.out.println("Hello, World!");}}';
+    const javaCode = 'public class HelloWorld1234 { public static void main(String[] args) {System.out.println("Hello, World!");}}';
 
     const capturedOutput = await service.executeCodeAndGetTime(javaCode);
   

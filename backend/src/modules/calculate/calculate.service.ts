@@ -8,7 +8,9 @@ export class CalculateService {
     //constructor(private readonly prismaService: PrismaService) {}
 
     async executeCodeAndGetTime(javaCode: string): Promise<number> {
-        const fileName = 'HelloWorld.java';
+        const fileName = this.extractClassName(javaCode) || 'temp.java';
+        console.log(`aaa  file Name: ${fileName}`);
+
         fs.writeFileSync(fileName, javaCode);
 
         const startTime = Date.now();
@@ -20,6 +22,11 @@ export class CalculateService {
         const executionTime = endTime - startTime;
         
         return executionTime;
+    }
+
+    private extractClassName(javaCode: string): string | null {
+      const classNameMatch = javaCode.match(/class\s+(\w+)/);
+      return classNameMatch ? `${classNameMatch[1]}.java` : null;
     }
 
     private async executeJavaCode(fileName: string): Promise<string> {
