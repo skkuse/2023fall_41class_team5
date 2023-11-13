@@ -5,6 +5,6 @@ import { UsersModule } from './modules/users/users.module';
 import { CalculateModule } from './modules/calculate/calculate.module';
 
 @Module({
-  imports: [PrismaModule, AuthModule, UsersModule],
+  imports: [PrismaModule, AuthModule, UsersModule, CalculateModule],
 })
 export class AppModule {}
