@@ -8,10 +8,7 @@ export class CalculateService {
   async executeCodeAndGetTime(javaCode: string): Promise<number> {
     const className = this.extractClassName(javaCode);
     const fileName = `${className}.java`;
-    const gclassName = `${className}.class`;
     const folderPath = './code';
-
-    console.log(`log  ${className}`);
     
     if(!fs.existsSync(folderPath)){
       fs.mkdirSync(folderPath);
@@ -27,7 +24,6 @@ export class CalculateService {
       //db 저장 구현
 
       ///////
-      console.log(`log  executionTime : ${executionTime}`);
       return executionTime;
     } catch (error) {
         console.error(`Error executing Java code: ${error}`);
@@ -47,11 +43,11 @@ export class CalculateService {
   
       process.on('close', (code) => {
         if (code === 0) {
-          const javaExecutionCommand = `sh -c 'time java ./code/${fileName}'`;
+          const javaExecutionCommand = `sh -c 'time timeout 10s java ./code/${fileName}'`;
           const javaExecution = childProcess.spawn(javaExecutionCommand, { shell: true });
-  
+
           let result = '';
-  
+
           // 자바 코드 실행 결과 수집
           javaExecution.stdout.on('data', (data) => {
             result += data.toString();
@@ -63,12 +59,13 @@ export class CalculateService {
           });
   
           javaExecution.on('close', (exitCode) => {
-            console.log(`log  ${fileName} execution completed with exit code ${exitCode}`);
-            console.log(`log  ${fileName} execution result: ${result}`);
-            
             if (exitCode === 0) { // 정상적으로 실행
               resolve(result);
-            } else {  // run time error 발생 시 -3을 converTimeFormatToSeconds로 전달
+            } 
+            else if (exitCode === 124){  // too long execution시 -2을 converTimeFormatToSeconds로 전달
+              resolve('-2'); 
+            }
+            else {  // run time error 발생 시 -3을 converTimeFormatToSeconds로 전달
               resolve('-3'); 
             }
           });
@@ -87,7 +84,9 @@ export class CalculateService {
 
   private converTimeFormatToSeconds(timeString: string): number | null{
     const match = timeString.match(/(\d+\.\d+)s/);
-    return match ? parseFloat(match[1]) : -3; // run time error 발생 시 -3 return
+    if(match)return parseFloat(match[1]);
+    else if(timeString === '-2')return -2; //too long execution
+    else if(timeString === '-3')return -3; //run time error
   }
 
   private deleteFilesInDirectory(directoryPath: string): void {
