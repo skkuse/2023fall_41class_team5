@@ -9,9 +9,13 @@ export class CalculateService {
     const className = this.extractClassName(javaCode);
     const fileName = `${className}.java`;
     const gclassName = `${className}.class`;
+    const folderPath = './code';
 
     console.log(`log  ${className}`);
-
+    
+    if(!fs.existsSync(folderPath)){
+      fs.mkdirSync(folderPath);
+    }
     fs.writeFileSync(`./code/${fileName}`, javaCode);
 
     var isCPSuccess = false;
