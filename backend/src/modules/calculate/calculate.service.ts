@@ -16,25 +16,14 @@ export class CalculateService {
     fs.writeFileSync(`./code/${fileName}`, javaCode);
 
     var isCPSuccess = false;
-    try{
-      const result = await this.executeJavaCode(fileName);
-      const executionTime = this.converTimeFormatToSeconds(result);
-      isCPSuccess = true;
-      ///////
-      //db 저장 구현
-
-      ///////
-      return executionTime;
-    } catch (error) {
-        console.error(`Error executing Java code: ${error}`);
-        throw new Error('Java code compilation failed. Please check your code and try again.');
-    } finally {
-        // ./code 안에 생성된 파일 모두 삭제
-        this.deleteFilesInDirectory('./code');
-        
-        if (!isCPSuccess)
-          return -1;
-    }
+    const result = await this.executeJavaCode(fileName);
+    const executionTime = this.converTimeFormatToSeconds(result);
+    isCPSuccess = true;
+   
+    // ./code 안에 생성된 파일 모두 삭제
+    this.deleteFilesInDirectory('./code');
+    
+    return executionTime;
   }
 
   private async executeJavaCode(fileName: string): Promise<string> {
@@ -70,7 +59,7 @@ export class CalculateService {
             }
           });
         } else {
-          reject(`Java compilation failed with code ${code}`);
+          resolve('-1');
         }
       });
     });
@@ -85,6 +74,7 @@ export class CalculateService {
   private converTimeFormatToSeconds(timeString: string): number | null{
     const match = timeString.match(/(\d+\.\d+)s/);
     if(match)return parseFloat(match[1]);
+    else if(timeString === '-1')return -1; //compile failure
     else if(timeString === '-2')return -2; //too long execution
     else if(timeString === '-3')return -3; //run time error
   }
