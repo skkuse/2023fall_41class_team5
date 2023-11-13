@@ -6,9 +6,11 @@ import * as fs from 'fs';
 export class CalculateService {
 
   async executeCodeAndGetTime(javaCode: string): Promise<number> {
-    const className = this.extractClassName(javaCode) || 'temp';
+    const className = this.extractClassName(javaCode);
     const fileName = `${className}.java`;
     const gclassName = `${className}.class`;
+
+    console.log(`log  ${className}`);
 
     fs.writeFileSync(`./code/${fileName}`, javaCode);
 
@@ -17,20 +19,21 @@ export class CalculateService {
       const result = await this.executeJavaCode(fileName);
       const executionTime = this.converTimeFormatToSeconds(result);
       isSuccess = true;
+      ///////
+      //db 저장 구현
 
+      ///////
+      console.log(`log  executionTime : ${executionTime}`);
       return executionTime;
     } catch (error) {
         console.error(`Error executing Java code: ${error}`);
         throw new Error('Java code compilation failed. Please check your code and try again.');
     } finally {
-        // 임시 java file 삭제 -> class 파일 여러개면 다 삭제 할 수 있도록 list로 관리해야함
-        fs.unlinkSync(`./code/${fileName}`);
-        if (isSuccess){
-          fs.unlinkSync(`./code/${gclassName}`);
-        }
-        else{
+        // ./code 안에 생성된 파일 모두 삭제
+        this.deleteFilesInDirectory('./code');
+        
+        if (!isSuccess)
           return -1;
-        }
     }
   }
 
@@ -62,12 +65,21 @@ export class CalculateService {
   }
 
   private extractClassName(javaCode: string): string | null {
-    const classNameMatch = javaCode.match(/class\s+(\w+)/);
-    return classNameMatch ? `${classNameMatch[1]}` : null;
+    const classNameMatch = javaCode.match(/public\s+class\s+(\w+)/);
+    return classNameMatch ? classNameMatch[1] : 'temp';
   }
 
   private converTimeFormatToSeconds(timeString: string): number | null{
     const match = timeString.match(/(\d+\.\d+)s/);
     return match ? parseFloat(match[1]) : null;
+  }
+
+  private deleteFilesInDirectory(directoryPath: string): void {
+    const files = fs.readdirSync(directoryPath);
+
+    for (const file of files) {
+      const filePath = `${directoryPath}/${file}`;
+      fs.unlinkSync(filePath);
+    }
   }
 }
