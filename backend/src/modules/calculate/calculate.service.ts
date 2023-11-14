@@ -15,10 +15,9 @@ export class CalculateService {
     }
     fs.writeFileSync(`./code/${fileName}`, javaCode);
 
-    var isCPSuccess = false;
-    const result = await this.executeJavaCode(fileName);
+    const timeoutLimit = 10;
+    const result = await this.executeJavaCode(fileName, timeoutLimit);
     const executionTime = this.converTimeFormatToSeconds(result);
-    isCPSuccess = true;
    
     // ./code 안에 생성된 파일 모두 삭제
     this.deleteFilesInDirectory('./code');
@@ -26,13 +25,13 @@ export class CalculateService {
     return executionTime;
   }
 
-  private async executeJavaCode(fileName: string): Promise<string> {
+  private async executeJavaCode(fileName: string, timeoutLimit: number): Promise<string> {
     return new Promise<string>((resolve, reject) => {
       const process = childProcess.spawn('javac', [`./code/${fileName}`]);
   
       process.on('close', (code) => {
         if (code === 0) {
-          const javaExecutionCommand = `sh -c 'time timeout 10s java ./code/${fileName}'`;
+          const javaExecutionCommand = `sh -c 'time timeout ${timeoutLimit}s java ./code/${fileName}'`;
           const javaExecution = childProcess.spawn(javaExecutionCommand, { shell: true });
 
           let result = '';
