@@ -2,8 +2,76 @@ import { Injectable } from '@nestjs/common';
 import * as childProcess from 'child_process';
 import * as fs from 'fs';
 
+type TYPE_PUE = {
+  provider: string;
+  PUE: string;
+  source: string;
+};
+
+type TYPE_PSF = {
+  data: number;
+};
+
+type TYPE_SPEC = {
+  model: string;
+  TDP: string;
+  n_cores: string;
+  TDP_per_core: string;
+  source: string;
+};
+
+type TYPE_CI = {
+  location: string;
+  continentName: string;
+  countryName: string;
+  regionName: string;
+  carbonIntensity: string;
+  Type: string;
+  source: string;
+  comments: string;
+};
+
 @Injectable()
 export class CalculateService {
+
+  /*return energy needed in kWh*/
+  public getEnergyNeeded(executionTime: number, coreType: string, cpuType: string, n_cpu: number, cpuUsage: number, gpuType: string, n_gpu: number, gpuUsage: number, memAvailable: number, provider: string): number{
+    let powerNeededGpu = 0;
+    let powerNeededCpu = 0;
+    let cpuPower = 0;
+    let gpuPower = 0;
+    let PUE = this.getPUEByProvider(provider);
+    let PSF = this.getPSF();
+
+    if(coreType === 'cpu'){
+      cpuPower = this.getCpuPowerByModel(cpuType);
+    }
+    else if(coreType === 'gpu'){
+      gpuPower = this.getGpuPowerByModel(gpuType);
+    }
+    else{
+      cpuPower = this.getCpuPowerByModel(cpuType);
+      gpuPower = this.getGpuPowerByModel(gpuType);
+    }
+    
+    powerNeededCpu = PUE * n_cpu * cpuPower * cpuUsage;
+    powerNeededGpu = PUE * n_gpu * gpuPower * gpuUsage;
+
+    executionTime = this.secondsToHours(executionTime);
+
+    const powerNeededCore = powerNeededGpu + powerNeededCpu;
+    const powerNeededMem = memAvailable * 0.3725;
+    const powerNeeded = powerNeededCore + powerNeededMem;
+
+    const energyNeeded = executionTime * powerNeeded * PSF / 1000
+
+    return energyNeeded;
+  }
+
+  public getCarbonFootprint(energyNeeded: number, location: string){
+    const carbonIntensity = this.getCarbonIntensity(location);
+    return energyNeeded * carbonIntensity;
+  }
 
   async executeCodeAndGetTime(javaCode: string): Promise<number> {
     const className = this.extractClassName(javaCode);
@@ -64,6 +132,57 @@ export class CalculateService {
     });
   }  
 
+  public getCpuPowerByModel(model: string): number{
+    const filePath = '../json/TDP_cpu.json';
+  
+    const data: TYPE_SPEC[] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  
+    const matchedProvider = data.find((entry) => entry.model === model);
+  
+    return parseFloat(matchedProvider.TDP_per_core);
+  }
+
+  public getGpuPowerByModel(model: string): number{
+    const filePath = '../json/TDP_gpu.json';
+  
+    const data: TYPE_SPEC[] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  
+    const matchedProvider = data.find((entry) => entry.model === model);
+  
+    return parseFloat(matchedProvider.TDP_per_core);
+  }
+
+  private getPUEByProvider(provider: string): number{
+    const filePath = '../json/defaults_PUE.json';
+  
+    const data: TYPE_PUE[] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  
+    const matchedProvider = data.find((entry) => entry.provider === provider);
+  
+    return parseFloat(matchedProvider.PUE);
+  }
+
+  private getPSF(): number{
+    const filePath = '../json/PSF.json';
+  
+    const jsonData: TYPE_PSF = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    
+    return jsonData.data;
+  }
+
+  private secondsToHours(seconds: number): number {
+    return seconds / 3600;
+  }
+
+  private getCarbonIntensity(location: string): number{
+    const filePath = '../json/CI_aggregated.json';
+  
+    const data: TYPE_CI[] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  
+    const matchedProvider = data.find((entry) => entry.location === location);
+  
+    return parseFloat(matchedProvider.carbonIntensity);
+  }
 
   private extractClassName(javaCode: string): string | null {
     const classNameMatch = javaCode.match(/public\s+class\s+(\w+)/);
