@@ -1,35 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import * as childProcess from 'child_process';
 import * as fs from 'fs';
-
-type TYPE_PUE = {
-  provider: string;
-  PUE: string;
-  source: string;
-};
-
-type TYPE_PSF = {
-  data: number;
-};
-
-type TYPE_SPEC = {
-  model: string;
-  TDP: string;
-  n_cores: string;
-  TDP_per_core: string;
-  source: string;
-};
-
-type TYPE_CI = {
-  location: string;
-  continentName: string;
-  countryName: string;
-  regionName: string;
-  carbonIntensity: string;
-  Type: string;
-  source: string;
-  comments: string;
-};
+import { TYPE_PUE, TYPE_PSF, TYPE_SPEC, TYPE_CI } from './type/calculate.type';
 
 @Injectable()
 export class CalculateService {
