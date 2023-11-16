@@ -12,6 +12,7 @@ import {
   ApiBearerAuth,
   ApiInternalServerErrorResponse,
   ApiOperation,
+  ApiTags,
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
 import { CurrentUser } from 'src/common/decorators/current-user.decorator';
@@ -19,6 +20,7 @@ import { User } from '@prisma/client';
 import { PostDto, PostListDto } from './dtos/post.dto';
 import { CommonResponseDto } from 'src/common/dtos/common-response.dto';
 
+@ApiTags('Post API')
 @Controller('post')
 @UseGuards(JwtGuard)
 export class PostController {
