@@ -61,7 +61,6 @@ export class PostController {
   @ApiBadRequestResponse({
     description: '조회 결과 존재하지 않음',
   })
-  @ApiBadRequestResponse({})
   @ApiInternalServerErrorResponse({
     description: '서버 내부 오류',
   })
