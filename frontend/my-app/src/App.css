@@ -223,6 +223,22 @@ margin:0;
   padding:0 50px;
 }
 
+.record-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* 그리드 아이템 간의 간격을 설정합니다. */
+  margin:auto;
+}
+
+.record-grid-item{
+  border-radius: 20px; /* 테두리의 둥근 정도 설정 */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* 그림자 설정 */
+  width: 350px;
+  height: 350px;
+  margin: auto;
+  background-color: #FFF;
+  padding: 20px;
+}
 
 
 @keyframes App-logo-spin {
