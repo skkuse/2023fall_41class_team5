@@ -11,13 +11,18 @@ const ArrowButton = ({ direction, onClick, size }) => {
       <div className={`arrow-button ${arrowClass}`} style={buttonStyle} onClick={onClick}></div>
     );
   };
+
+  
 function RecordGrid(props){
 
     const gridItems = [];
 
     // 3x3 그리드 아이템 생성
     for (let i = 1; i <= 9; i++) {
-      gridItems.push(<div key={i} className="record-grid-item">{i}</div>);
+      gridItems.push(<div key={i} className="record-grid-item">
+        {i}
+        {/*여기다 그리드 레이아웃 하나에 들어갈 것 작성 하면 될 것 같습니다.*/}
+      </div>);
     }
   
     const handleLeftClick = () => {
