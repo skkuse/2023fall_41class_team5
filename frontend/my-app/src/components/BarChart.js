@@ -63,7 +63,7 @@ export function BarChart(props) {
   const match = [['Sweden', 13], ['Switzerland', 26],['France', 117],['Canada', 274], ['United Kingdom', 527], ['USA', 967], ['China', 1226], ['India', 1616], ['Austra', 1916], ['Your Algorithm', props.footprint]]
   // Separate the first elements into a new array
   // 배열을 두 번째 요소를 기준으로 오름차순 정렬
- const sortedMatch = match.slice().sort((a, b) => a[1] - b[1]);
+  const sortedMatch = match.slice().sort((a, b) => a[1] - b[1]);
 
 
   const labels = sortedMatch.map(item => item[0]);

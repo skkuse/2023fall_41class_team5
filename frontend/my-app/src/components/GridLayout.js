@@ -102,6 +102,7 @@ function GridLayout(props){
         <GridItemB area='d' result={co2}></GridItemB>
         <GridItemB area='e' result={co2}></GridItemB>
         <GridItemC memory={memory} cpu={cpu} co2={co2} area='f' ></GridItemC>
+        
       </div>
     );
   }

@@ -10,36 +10,6 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 class DoughnutChart extends Component {
   constructor(props) {
     super(props);
-    // props로 받은 데이터를 state에 저장
-    this.state = {
-      cpu: props.cpu || 0, // 기본값 0
-      memory: props.memory || 0, // 기본값 0
-    };
-
-    
-    // 숫자를 담은 state를 초기화
-    this.state = {
-      memory: this.state.memory, // 예시로 12으로 초기화
-      cpu: this.state.cpu, // 예시로 12으로 초기화
-    };
-
-    this.data = {
-      labels: ['Memory', 'CPU'],
-      datasets: [
-        {
-          data: [this.state.memory, this.state.cpu],
-          backgroundColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-          ],
-          borderWidth: 1,
-        },
-      ],
-    };
 
     this.options = {
       plugins: {
@@ -70,10 +40,42 @@ class DoughnutChart extends Component {
       },
       maintainAspectRatio: false,
     };
+
   }
 
   render() {
-    return <Doughnut options={this.options} data={this.data} />;
+    // props로 받은 데이터를 state에 저장
+
+
+    
+    // // 숫자를 담은 state를 초기화
+    // this.state = {
+    //   memory: this.state.memory, // 예시로 12으로 초기화
+    //   cpu: this.state.cpu, // 예시로 12으로 초기화
+    // };
+
+    const data = {
+      labels: ['Memory', 'CPU'],
+      datasets: [
+        {
+          data: [this.props.memory, this.props.cpu],
+          backgroundColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+          ],
+          borderWidth: 1,
+        },
+      ],
+    };
+
+    
+    return <Doughnut options={this.options} data={data} />
+          
+          
   }
 }
 
