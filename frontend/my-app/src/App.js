@@ -1,10 +1,10 @@
 import './App.css';
-import Header from './Content/Header';
-import Content from './Content/Content';
-import Loginbox from './Login/LoginBox';
-import Signupbox from './Signup/SignupBox';
+import Header from './components/Header';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import ContentPage from './pages/ContentPage';
+import LoginPage from './pages/LoginPage';
+import RecordPage from './pages/RecordPage';
+import RegisterPage from './pages/RegisterPage';
 
 function App() {
   return (
@@ -12,13 +12,11 @@ function App() {
       <Header></Header>
       <div className="App">
       <Routes>
-        <Route path='/'  element={<Content/>}></Route>
-        {/* 로그인 페이지 구현하고 element 교체 */}
-        <Route path='/login'  element={<Loginbox/>}></Route>
-        {/* 회원가입 페이지 구현하고 element 교체 */}
-        <Route path='/signup'  element={<Signupbox/>}></Route>
+        <Route path='/'  element={<ContentPage/>}></Route>
+        <Route path='/login'  element={<LoginPage/>}></Route>
+        <Route path='/register'  element={<RegisterPage/>}></Route>
         {/* 기록 페이지 구현하고 element 교체 */}
-        <Route path='/record'  element={<Content/>}></Route>
+        <Route path='/record'  element={<RecordPage/>}></Route>
         </Routes>
       </div>
     </BrowserRouter>

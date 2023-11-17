@@ -49,7 +49,7 @@
 .login{
   height : 40px;
   text-align: right;
-  background-color: cornflowerblue;
+  background-color: none;
 }
 
 .siteName{
@@ -63,7 +63,7 @@
 
 .codeInput{
   height: 500px;
-  background-color: aqua;
+  background-color: none;
 }
 
 

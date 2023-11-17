@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background: linear-gradient(to bottom, #D7E5CA, #F9F3CC); 그라데이션 색상 설정 */
+  background: linear-gradient(to bottom, #D7E5CA, #F9F3CC)
 }
 
 code {
