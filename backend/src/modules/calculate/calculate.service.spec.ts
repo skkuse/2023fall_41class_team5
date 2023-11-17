@@ -38,7 +38,7 @@ describe('CalculateService', () => {
 
       const codeDto = new CodeDto();
       codeDto.javaCode = javaCode;
-      const capturedOutput = await controller.calculateCarbonFootprint(codeDto);
+      const capturedOutput = await controller.calculateNotLogin(codeDto);
     
       expect(capturedOutput1).toBeDefined();
       expect(capturedOutput2).toBeDefined();

@@ -9,8 +9,8 @@ export class CalculateController {
     constructor(private readonly calculateService: CalculateService){}
 
     @Post()
-    @ApiOperation({ summary: '탄소 배출량 계산' })
-    async calculateCarbonFootprint(@Body() codeDto: CodeDto): Promise<ResultDto> {
+    @ApiOperation({ summary: '비 로그인 사용자 탄소 배출량 계산' })
+    async calculateNotLogin(@Body() codeDto: CodeDto): Promise<ResultDto> {
         /**
          * javaCode     : 입력받은 자바 코드
          * coreType     : cpu, gpu, both
@@ -24,6 +24,39 @@ export class CalculateController {
          * provider     : local, personal 이면 Unknown이고 이외에 gcp, aws, azure가 있음, defaults_PUE.csv 참고
          * location     : CI_aggregated.csv 참고
         */
+        const javaCode = codeDto.javaCode;
+        const coreType = 'cpu';
+        const cpuType = 'Core i7-8700K'
+        const n_cpu = 8;
+        const cpuUsage = 1;
+        const gpuType = '';
+        const n_gpu = 0;
+        const gpuUsage = 0;
+        const memAvailable = 64;
+        const provider = 'Unknown';
+        const location = 'KR';
+        let kWh = 0;
+        let gCo2 = 0;
+        let treeMonths = 0;
+        let driving = 0;
+        let flight = 0;
+
+        const executionTime = await this.calculateService.executeCodeAndGetTime(javaCode);
+        if(executionTime > 0){
+            kWh = this.calculateService.getEnergyNeeded(executionTime, coreType, cpuType, n_cpu, cpuUsage, gpuType, n_gpu, gpuUsage, memAvailable, provider);
+            gCo2 = this.calculateService.getCarbonFootprint(kWh, location);
+            treeMonths = this.calculateService.getTreeMonths(gCo2);
+            driving = this.calculateService.getDriving(gCo2);
+            flight = this.calculateService.getFlight(gCo2);   
+        }
+        
+        const ret = new ResultDto(executionTime, coreType, cpuType, n_cpu, cpuUsage, gpuType, n_gpu, gpuUsage, memAvailable, provider, location, kWh, gCo2, treeMonths, driving, flight);
+        return ret;
+    }
+
+    @Post(':id')
+    @ApiOperation({ summary: '로그인 사용자 탄소 배출량 계산' })
+    async calculateLogin(@Body() codeDto: CodeDto): Promise<ResultDto> {
         const javaCode = codeDto.javaCode;
         const coreType = 'cpu';
         const cpuType = 'Core i7-8700K'
