@@ -1,10 +1,47 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import * as childProcess from 'child_process';
 import * as fs from 'fs';
 import { TYPE_PUE, TYPE_PSF, TYPE_SPEC, TYPE_CI, TYPE_REF } from './type/calculate.type';
+import { User } from '@prisma/client';
+import { ResultDto } from './dtos/result.dto';
+import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class CalculateService {
+  constructor(private readonly prismaService: PrismaService) {}
+
+  async saveData(currentUser: User, javaCode: string, result: ResultDto){
+    const userId  = currentUser.id;  
+    const name = this.extractClassName(javaCode);
+    
+    try {
+      await this.prismaService.$transaction(async (tx) => {
+        await tx.executionInfos.create({
+          data: {
+            userId: userId,
+            name: name,
+            code: javaCode,
+            runTime: result.executionTime.toString() + 's',
+            hostName: 'localhost',
+            os: 'Windows',
+            platform: 'win32',
+            arch: 'x64',
+            version: '10.0.10',
+            cores: (result.n_cpu+result.n_gpu).toString(),
+            cpuName: result.cpuType,
+            cpuSpeed: '2.0 GHz',
+            carbonFootprint: result.gCo2.toString() + 'g',
+            energyNeeded: result.kWh.toString() + 'KWh',
+            PUE: this.getPUEByProvider(result.provider).toString(),
+            PSF: this.getPSF().toString(),
+          },
+        });
+      });
+    } catch (e) {
+      console.log(e);
+      throw new InternalServerErrorException();
+    }
+  }
 
   /*return energy needed in kWh*/
   public getEnergyNeeded(executionTime: number, coreType: string, cpuType: string, n_cpu: number, cpuUsage: number, gpuType: string, n_gpu: number, gpuUsage: number, memAvailable: number, provider: string): number{
@@ -143,7 +180,10 @@ export class CalculateService {
     const filePath = '../json/defaults_PUE.json';
   
     const data: TYPE_PUE[] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-  
+    
+    if(provider === 'Local server' || provider === 'Personal computer'){
+      provider = 'Unknown';
+    }
     const matchedProvider = data.find((entry) => entry.provider === provider);
   
     return parseFloat(matchedProvider.PUE);
