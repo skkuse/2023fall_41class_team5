@@ -3,7 +3,7 @@ import { ApiOperation } from '@nestjs/swagger';
 import { CalculateService } from './calculate.service';
 import { CodeDto } from './dtos/code.dto';
 import { ResultDto } from './dtos/result.dto';
-import { CurrentUser } from 'src/common/decorators/current-user.decorator';
+import { CurrentUser } from '../../common/decorators/current-user.decorator';
 import { User } from '@prisma/client';
 
 @Controller('calculate')
