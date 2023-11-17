@@ -233,8 +233,8 @@ margin:0;
 .record-grid-item{
   border-radius: 20px; /* 테두리의 둥근 정도 설정 */
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* 그림자 설정 */
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   margin: auto;
   background-color: #FFF;
   padding: 20px;
@@ -255,7 +255,8 @@ margin:0;
   border-width: 5px 8px 5px 0;
   border-color: transparent #007bff transparent transparent;
   cursor: pointer;
-  margin: 0 250px; /* 화살표 사이 간격 조절 */
+  margin: 0 100px; /* 화살표 사이 간격 조절 */
+  margin-top:4px;
 }
 
 /* 화살표를 위쪽으로 회전한 스타일 */
@@ -266,6 +267,28 @@ margin:0;
 /* 화살표를 아래쪽으로 회전한 스타일 */
 .right-arrow {
   transform: rotate(180deg);
+}
+
+.page-list-container {
+  display: flex;
+  gap: 30px;
+}
+
+.page-number {
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex; /* 수평 중앙 정렬을 위해 추가 */
+  align-items: center; /* 세로 중앙 정렬을 위해 추가 */
+  justify-content: center; /* 수평 중앙 정렬을 위해 추가 */
+}
+
+.page-number.active {
+  background-color: #007bff;
+  color: #fff;
 }
 
 @keyframes App-logo-spin {
