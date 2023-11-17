@@ -26,3 +26,9 @@ export type TYPE_CI = {
     source: string;
     comments: string;
   };
+
+  export type TYPE_REF = {
+    variable: string;
+    value: string;
+    source: string;
+  };
