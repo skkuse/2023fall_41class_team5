@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import * as childProcess from 'child_process';
 import * as fs from 'fs';
-import { TYPE_PUE, TYPE_PSF, TYPE_SPEC, TYPE_CI } from './type/calculate.type';
+import { TYPE_PUE, TYPE_PSF, TYPE_SPEC, TYPE_CI, TYPE_REF } from './type/calculate.type';
 
 @Injectable()
 export class CalculateService {
@@ -43,6 +43,21 @@ export class CalculateService {
   public getCarbonFootprint(energyNeeded: number, location: string){
     const carbonIntensity = this.getCarbonIntensity(location);
     return energyNeeded * carbonIntensity;
+  }
+
+  public getTreeMonths(gCo2: number){
+    const refValue = this.getRefVal('tree_month');
+    return gCo2 * refValue;
+  }
+
+  public getDriving(gCo2: number){
+    const refValue = this.getRefVal('passengerCar_US_perkm');
+    return gCo2 * refValue;
+  }
+
+  public getFlight(gCo2: number){
+    const refValue = this.getRefVal('flight_economy_perkm');
+    return gCo2 * refValue;
   }
 
   async executeCodeAndGetTime(javaCode: string): Promise<number> {
@@ -104,7 +119,7 @@ export class CalculateService {
     });
   }  
 
-  public getCpuPowerByModel(model: string): number{
+  private getCpuPowerByModel(model: string): number{
     const filePath = '../json/TDP_cpu.json';
   
     const data: TYPE_SPEC[] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
@@ -114,7 +129,7 @@ export class CalculateService {
     return parseFloat(matchedProvider.TDP_per_core);
   }
 
-  public getGpuPowerByModel(model: string): number{
+  private getGpuPowerByModel(model: string): number{
     const filePath = '../json/TDP_gpu.json';
   
     const data: TYPE_SPEC[] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
@@ -142,10 +157,6 @@ export class CalculateService {
     return jsonData.data;
   }
 
-  private secondsToHours(seconds: number): number {
-    return seconds / 3600;
-  }
-
   private getCarbonIntensity(location: string): number{
     const filePath = '../json/CI_aggregated.json';
   
@@ -154,6 +165,20 @@ export class CalculateService {
     const matchedProvider = data.find((entry) => entry.location === location);
   
     return parseFloat(matchedProvider.carbonIntensity);
+  }
+
+  private getRefVal(refVal: string): number{
+    const filePath = '../json/referenceValues.json';
+    let ret = 0;
+    const data: TYPE_REF[] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    
+    const matchedProvider = data.find((entry) => entry.variable === refVal);
+  
+    return parseFloat(matchedProvider.value);
+  }
+
+  private secondsToHours(seconds: number): number {
+    return seconds / 3600;
   }
 
   private extractClassName(javaCode: string): string | null {

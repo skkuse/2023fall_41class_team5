@@ -2,6 +2,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CalculateService } from './calculate.service';
 import { CalculateController } from './calculate.controller';
+import { CodeDto } from './dtos/code.dto';
 
 jest.setTimeout(30000);
 
@@ -19,7 +20,7 @@ describe('CalculateService', () => {
   });
   
   it('get cf', async() => {
-      const javaCode = 'public class aaaa { public static void main(String[] args) {System.out.println("Hello, World!");}}';
+      const javaCode = 'public class aaaa { public static void main(String[] args) {System.out.println("Hello, World!")}}';
       const coreType = 'cpu';
       const cpuType = 'Core i7-8700K'
       const n_cpu = 8;
@@ -35,7 +36,9 @@ describe('CalculateService', () => {
       const capturedOutput2 = service.getEnergyNeeded(capturedOutput1, coreType, cpuType, n_cpu, cpuUsage, gpuType, n_gpu, gpuUsage, memAvailable, provider);
       const capturedOutput3 = service.getCarbonFootprint(capturedOutput2, location);
 
-      const capturedOutput = await controller.calculateCarbonFootprint(javaCode, coreType, cpuType, n_cpu, cpuUsage, gpuType, n_gpu, gpuUsage, memAvailable, provider, location);
+      const codeDto = new CodeDto();
+      codeDto.javaCode = javaCode;
+      const capturedOutput = await controller.calculateCarbonFootprint(codeDto);
     
       expect(capturedOutput1).toBeDefined();
       expect(capturedOutput2).toBeDefined();
@@ -45,7 +48,14 @@ describe('CalculateService', () => {
       console.log(capturedOutput3);
 
       expect(capturedOutput).toBeDefined();
-      console.log(capturedOutput);
+      console.log(capturedOutput.executionTime);
+      console.log(capturedOutput.coreType);
+      console.log(capturedOutput.cpuType);
+      console.log(capturedOutput.kWh);
+      console.log(capturedOutput.gCo2);
+      console.log(capturedOutput.treeMonths);
+      console.log(capturedOutput.driving);
+      console.log(capturedOutput.flight);
   });
 
   // it('should execute Java code and return execution time', async () => {
