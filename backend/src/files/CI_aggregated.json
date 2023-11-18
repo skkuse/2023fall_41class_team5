@@ -1,0 +1,1302 @@
+[
+    {
+        "location": "ZA",
+        "continentName": "Africa",
+        "countryName": "South Africa",
+        "regionName": "Any",
+        "carbonIntensity": "928",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Climate Transparency (2019 Report)",
+        "comments": "Emissions intensity of the power sector"
+    },
+    {
+        "location": "CN",
+        "continentName": "Asia",
+        "countryName": "China",
+        "regionName": "Any",
+        "carbonIntensity": "555",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Climate Transparency (2019 Report)",
+        "comments": "Emissions intensity of the power sector"
+    },
+    {
+        "location": "CN-HK",
+        "continentName": "Asia",
+        "countryName": "China",
+        "regionName": "Hong Kong",
+        "carbonIntensity": "755",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4) and Hong Kong Electric Company (2019) and CLP Group (2019)",
+        "comments": "Combined generation and T&D factor"
+    },
+    {
+        "location": "IN",
+        "continentName": "Asia",
+        "countryName": "India",
+        "regionName": "Any",
+        "carbonIntensity": "708",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Climate Transparency (2019 Report)",
+        "comments": "Emissions intensity of the power sector"
+    },
+    {
+        "location": "ID",
+        "continentName": "Asia",
+        "countryName": "Indonesia",
+        "regionName": "Any",
+        "carbonIntensity": "761",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Climate Transparency (2019 Report)",
+        "comments": "Emissions intensity of the power sector"
+    },
+    {
+        "location": "JP",
+        "continentName": "Asia",
+        "countryName": "Japan",
+        "regionName": "Any",
+        "carbonIntensity": "506",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Climate Transparency (2019 Report)",
+        "comments": "Emissions intensity of the power sector"
+    },
+    {
+        "location": "KR",
+        "continentName": "Asia",
+        "countryName": "Korea",
+        "regionName": "Any",
+        "carbonIntensity": "500",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Climate Transparency (2019 Report)",
+        "comments": "Emissions intensity of the power sector"
+    },
+    {
+        "location": "SG",
+        "continentName": "Asia",
+        "countryName": "Singapore",
+        "regionName": "Any",
+        "carbonIntensity": "418.8",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Singapore Energy Market Authority (EMA)",
+        "comments": "Combined generation and T&D factor"
+    },
+    {
+        "location": "TH",
+        "continentName": "Asia",
+        "countryName": "Thailand",
+        "regionName": "Any",
+        "carbonIntensity": "497",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Energy Policy and Planning Office (EPPO) Thai Government Ministry of Energy",
+        "comments": "Combined generation and T&D factor"
+    },
+    {
+        "location": "AU",
+        "continentName": "Oceania",
+        "countryName": "Australia",
+        "regionName": "Any",
+        "carbonIntensity": "880",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Australian Government",
+        "comments": "Combined generation and T&D factor"
+    },
+    {
+        "location": "NZ",
+        "continentName": "Oceania",
+        "countryName": "New Zealand",
+        "regionName": "Any",
+        "carbonIntensity": "105.1",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Ministry for the Environment https://www.mfe.govt.nz/node/18670/",
+        "comments": "Emission factors published in 2019, based on 2018 national inventory which is based on 2016 data."
+    },
+    {
+        "location": "SA",
+        "continentName": "Asia",
+        "countryName": "Saudi Arabia",
+        "regionName": "Any",
+        "carbonIntensity": "732",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Climate Transparency (2019 Report)",
+        "comments": "Emissions intensity of the power sector"
+    },
+    {
+        "location": "TR",
+        "continentName": "Asia",
+        "countryName": "Turkey",
+        "regionName": "Any",
+        "carbonIntensity": "481",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Climate Transparency (2019 Report)",
+        "comments": "Emissions intensity of the power sector"
+    },
+    {
+        "location": "AE",
+        "continentName": "Asia",
+        "countryName": "United Arab Emirates",
+        "regionName": "Any",
+        "carbonIntensity": "425.8",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Dubai Electricity & Water Authority (sustainability report 2018)",
+        "comments": "Generation factor only"
+    },
+    {
+        "location": "CA",
+        "continentName": "North America",
+        "countryName": "Canada",
+        "regionName": "Any",
+        "carbonIntensity": "130",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and UN Framework Convention on Climate Change",
+        "comments": "Combined generation and T&D factor"
+    },
+    {
+        "location": "MX",
+        "continentName": "North America",
+        "countryName": "Mexico",
+        "regionName": "Any",
+        "carbonIntensity": "449",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Climate Transparency (2019 Report)",
+        "comments": "Emissions intensity of the power sector"
+    },
+    {
+        "location": "US",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Any",
+        "carbonIntensity": "453.22",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and US Env Protection Agency (EPA) eGrid",
+        "comments": "Combined generation and T&D factor"
+    },
+    {
+        "location": "AR",
+        "continentName": "South America",
+        "countryName": "Argentina",
+        "regionName": "Any",
+        "carbonIntensity": "313",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Climate Transparency (2019 Report)",
+        "comments": "Emissions intensity of the power sector"
+    },
+    {
+        "location": "BR",
+        "continentName": "South America",
+        "countryName": "Brazil",
+        "regionName": "Any",
+        "carbonIntensity": "74",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Climate Transparency (2019 Report)",
+        "comments": "Emissions intensity of the power sector"
+    },
+    {
+        "location": "AT",
+        "continentName": "Europe",
+        "countryName": "Austria",
+        "regionName": "Any",
+        "carbonIntensity": "132.86",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "BE",
+        "continentName": "Europe",
+        "countryName": "Belgium",
+        "regionName": "Any",
+        "carbonIntensity": "153.13",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "BG",
+        "continentName": "Europe",
+        "countryName": "Bulgaria",
+        "regionName": "Any",
+        "carbonIntensity": "437.37",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "HR",
+        "continentName": "Europe",
+        "countryName": "Croatia",
+        "regionName": "Any",
+        "carbonIntensity": "273.15",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "CY",
+        "continentName": "Europe",
+        "countryName": "Cyprus",
+        "regionName": "Any",
+        "carbonIntensity": "677.29",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "CZ",
+        "continentName": "Europe",
+        "countryName": "Czech Republic",
+        "regionName": "Any",
+        "carbonIntensity": "544.65",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "DK",
+        "continentName": "Europe",
+        "countryName": "Denmark",
+        "regionName": "Any",
+        "carbonIntensity": "154.44",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "EE",
+        "continentName": "Europe",
+        "countryName": "Estonia",
+        "regionName": "Any",
+        "carbonIntensity": "723.28",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "FI",
+        "continentName": "Europe",
+        "countryName": "Finland",
+        "regionName": "Any",
+        "carbonIntensity": "136.22",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "FR",
+        "continentName": "Europe",
+        "countryName": "France",
+        "regionName": "Any",
+        "carbonIntensity": "38.95",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "DE",
+        "continentName": "Europe",
+        "countryName": "Germany",
+        "regionName": "Any",
+        "carbonIntensity": "378.62",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "GR",
+        "continentName": "Europe",
+        "countryName": "Greece",
+        "regionName": "Any",
+        "carbonIntensity": "549.01",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "HU",
+        "continentName": "Europe",
+        "countryName": "Hungary",
+        "regionName": "Any",
+        "carbonIntensity": "252.98",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "IS",
+        "continentName": "Europe",
+        "countryName": "Iceland",
+        "regionName": "Any",
+        "carbonIntensity": "0.11",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "IE",
+        "continentName": "Europe",
+        "countryName": "Ireland",
+        "regionName": "Any",
+        "carbonIntensity": "348.04",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "IT",
+        "continentName": "Europe",
+        "countryName": "Italy",
+        "regionName": "Any",
+        "carbonIntensity": "338.54",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "LV",
+        "continentName": "Europe",
+        "countryName": "Latvia",
+        "regionName": "Any",
+        "carbonIntensity": "303.33",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "LT",
+        "continentName": "Europe",
+        "countryName": "Lithuania",
+        "regionName": "Any",
+        "carbonIntensity": "149.13",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "LU",
+        "continentName": "Europe",
+        "countryName": "Luxembourg",
+        "regionName": "Any",
+        "carbonIntensity": "139.39",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "MT",
+        "continentName": "Europe",
+        "countryName": "Malta",
+        "regionName": "Any",
+        "carbonIntensity": "370.6",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "NL",
+        "continentName": "Europe",
+        "countryName": "Netherlands",
+        "regionName": "Any",
+        "carbonIntensity": "452.07",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "NO",
+        "continentName": "Europe",
+        "countryName": "Norway",
+        "regionName": "Any",
+        "carbonIntensity": "11.18",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "PL",
+        "continentName": "Europe",
+        "countryName": "Poland",
+        "regionName": "Any",
+        "carbonIntensity": "791.07",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "PT",
+        "continentName": "Europe",
+        "countryName": "Portugal",
+        "regionName": "Any",
+        "carbonIntensity": "252.55",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "RO",
+        "continentName": "Europe",
+        "countryName": "Romania",
+        "regionName": "Any",
+        "carbonIntensity": "310.11",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "RU",
+        "continentName": "Europe",
+        "countryName": "Russian Federation",
+        "regionName": "Any",
+        "carbonIntensity": "325",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Climate Transparency (2019 Report)",
+        "comments": "Emissions intensity of the power sector"
+    },
+    {
+        "location": "RS",
+        "continentName": "Europe",
+        "countryName": "Serbia",
+        "regionName": "Any",
+        "carbonIntensity": "762.53",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "SK",
+        "continentName": "Europe",
+        "countryName": "Slovakia",
+        "regionName": "Any",
+        "carbonIntensity": "151.1",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "SI",
+        "continentName": "Europe",
+        "countryName": "Slovenia",
+        "regionName": "Any",
+        "carbonIntensity": "243.85",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "ES",
+        "continentName": "Europe",
+        "countryName": "Spain",
+        "regionName": "Any",
+        "carbonIntensity": "220.26",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "SE",
+        "continentName": "Europe",
+        "countryName": "Sweden",
+        "regionName": "Any",
+        "carbonIntensity": "11.89",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB)",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "CH",
+        "continentName": "Europe",
+        "countryName": "Switzerland",
+        "regionName": "Any",
+        "carbonIntensity": "11.82",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB) ",
+        "comments": "Production mix factor"
+    },
+    {
+        "location": "GB",
+        "continentName": "Europe",
+        "countryName": "United Kingdom",
+        "regionName": "Any",
+        "carbonIntensity": "253.19",
+        "Type": "Country",
+        "source": "carbonfootprint (June 2020 v1.4) and Association of Issuing Bodies (AIB) ",
+        "comments": "Generation & transmission & distribution factors"
+    },
+    {
+        "location": "US-AK",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Alaska",
+        "carbonIntensity": "435.97",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-AL",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Alabama",
+        "carbonIntensity": "414.05",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-AR",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Arkansas",
+        "carbonIntensity": "581.39",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-AZ",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Arizona",
+        "carbonIntensity": "463.3",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-CA",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "California",
+        "carbonIntensity": "201.13",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-CO",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Colorado",
+        "carbonIntensity": "653.44",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-CT",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Connecticut",
+        "carbonIntensity": "243",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-DC",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Washington DC",
+        "carbonIntensity": "209.81",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-DE",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Delaware",
+        "carbonIntensity": "429.41",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-FL",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Florida",
+        "carbonIntensity": "451.98",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-GA",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Georgia",
+        "carbonIntensity": "444.38",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-HI",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Hawaii",
+        "carbonIntensity": "729.13",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-IA",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Iowa",
+        "carbonIntensity": "513.78",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-ID",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Idaho",
+        "carbonIntensity": "76.59",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-IL",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Illinois",
+        "carbonIntensity": "390.38",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-IN",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Indiana",
+        "carbonIntensity": "833.82",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-KS",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Kansas",
+        "carbonIntensity": "475.25",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-KY",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Kentucky",
+        "carbonIntensity": "875.34",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-LA",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Louisiana",
+        "carbonIntensity": "400.26",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-MA",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Massachusetts",
+        "carbonIntensity": "349.97",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-MD",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Maryland",
+        "carbonIntensity": "401.15",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-ME",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Maine",
+        "carbonIntensity": "127.86",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-MI",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Michigan",
+        "carbonIntensity": "532.1",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-MN",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Minnesota",
+        "carbonIntensity": "478.4",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-MO",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Missouri",
+        "carbonIntensity": "816.85",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-MS",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Mississip",
+        "carbonIntensity": "438.49",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-MT",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Montana",
+        "carbonIntensity": "555.56",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-NC",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "North Carolina",
+        "carbonIntensity": "383.42",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-ND",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "North Dakota",
+        "carbonIntensity": "723.33",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-NE",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Nebraska",
+        "carbonIntensity": "675.98",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-NH",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "New Hampshire",
+        "carbonIntensity": "145.82",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-NJ",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "New Jersey",
+        "carbonIntensity": "239.47",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-NM",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "New Mexico",
+        "carbonIntensity": "638.7",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-NV",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Nevada",
+        "carbonIntensity": "355.76",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-NY",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "New York",
+        "carbonIntensity": "199.61",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-OH",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Ohio",
+        "carbonIntensity": "634.21",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-OK",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Oklahoma",
+        "carbonIntensity": "426.03",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-OR",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Oregon",
+        "carbonIntensity": "149.7",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-PA",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Pennsylvania",
+        "carbonIntensity": "376.21",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-RI",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Rhode Island",
+        "carbonIntensity": "414.27",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-SC",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "South Carolina",
+        "carbonIntensity": "302.63",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-SD",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "South Dakota",
+        "carbonIntensity": "247.96",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-TN",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Tennessee",
+        "carbonIntensity": "356.85",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-TX",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Texas",
+        "carbonIntensity": "468.98",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-UT",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Utah",
+        "carbonIntensity": "766.79",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-VA",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Virginia",
+        "carbonIntensity": "354.25",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-VT",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Vermont",
+        "carbonIntensity": "27.38",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-WA",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Washington",
+        "carbonIntensity": "95.34",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-WI",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Wisconsin",
+        "carbonIntensity": "665.83",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-WV",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "West Virginia",
+        "carbonIntensity": "935.4",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "US-WY",
+        "continentName": "North America",
+        "countryName": "United States of America",
+        "regionName": "Wyoming",
+        "carbonIntensity": "983.3",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "CA-AB",
+        "continentName": "North America",
+        "countryName": "Canada",
+        "regionName": "Alberta",
+        "carbonIntensity": "680",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "CA-BC",
+        "continentName": "North America",
+        "countryName": "Canada",
+        "regionName": "British Columbia",
+        "carbonIntensity": "12.8",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "CA-MT",
+        "continentName": "North America",
+        "countryName": "Canada",
+        "regionName": "Manitoba",
+        "carbonIntensity": "1.4",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "CA-NB",
+        "continentName": "North America",
+        "countryName": "Canada",
+        "regionName": "New Brunswick",
+        "carbonIntensity": "400",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "CA-NL",
+        "continentName": "North America",
+        "countryName": "Canada",
+        "regionName": "Newfoundland and Labrador",
+        "carbonIntensity": "27",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "CA-NS",
+        "continentName": "North America",
+        "countryName": "Canada",
+        "regionName": "Nova Scotia",
+        "carbonIntensity": "760",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "CA-NT",
+        "continentName": "North America",
+        "countryName": "Canada",
+        "regionName": "Northwest Territories",
+        "carbonIntensity": "160",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "CA-NU",
+        "continentName": "North America",
+        "countryName": "Canada",
+        "regionName": "Nunavut",
+        "carbonIntensity": "890",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "CA-ON",
+        "continentName": "North America",
+        "countryName": "Canada",
+        "regionName": "Ontario",
+        "carbonIntensity": "30",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "CA-PE",
+        "continentName": "North America",
+        "countryName": "Canada",
+        "regionName": "Prince Edward Island",
+        "carbonIntensity": "14",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "CA-QC",
+        "continentName": "North America",
+        "countryName": "Canada",
+        "regionName": "Quebec",
+        "carbonIntensity": "1.7",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "CA-SK",
+        "continentName": "North America",
+        "countryName": "Canada",
+        "regionName": "Saskatchewan",
+        "carbonIntensity": "710",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "CA-YT",
+        "continentName": "North America",
+        "countryName": "Canada",
+        "regionName": "Yukon Territory",
+        "carbonIntensity": "79",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2018 (published in 2020)"
+    },
+    {
+        "location": "AU-ACT",
+        "continentName": "Oceania",
+        "countryName": "Australia",
+        "regionName": "Australian Capital Territory",
+        "carbonIntensity": "900",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2017/18 (published in 2019)"
+    },
+    {
+        "location": "AU-NSW",
+        "continentName": "Oceania",
+        "countryName": "Australia",
+        "regionName": "New South Wales",
+        "carbonIntensity": "900",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2017/18 (published in 2019)"
+    },
+    {
+        "location": "AU-NT",
+        "continentName": "Oceania",
+        "countryName": "Australia",
+        "regionName": "Northern Territory",
+        "carbonIntensity": "710",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2017/18 (published in 2019)"
+    },
+    {
+        "location": "AU-NT2",
+        "continentName": "Oceania",
+        "countryName": "Australia",
+        "regionName": "Northern Territory (Darwin Katherine Interconnected System)",
+        "carbonIntensity": "550",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2017/18 (published in 2019)"
+    },
+    {
+        "location": "AU-QLD",
+        "continentName": "Oceania",
+        "countryName": "Australia",
+        "regionName": "Queensland",
+        "carbonIntensity": "930",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2017/18 (published in 2019)"
+    },
+    {
+        "location": "AU-SA",
+        "continentName": "Oceania",
+        "countryName": "Australia",
+        "regionName": "South Australia",
+        "carbonIntensity": "540",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2017/18 (published in 2019)"
+    },
+    {
+        "location": "AU-TAS",
+        "continentName": "Oceania",
+        "countryName": "Australia",
+        "regionName": "Tasmania",
+        "carbonIntensity": "170",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2017/18 (published in 2019)"
+    },
+    {
+        "location": "AU-VIC",
+        "continentName": "Oceania",
+        "countryName": "Australia",
+        "regionName": "Victoria",
+        "carbonIntensity": "1120",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2017/18 (published in 2019)"
+    },
+    {
+        "location": "AU-WA1",
+        "continentName": "Oceania",
+        "countryName": "Australia",
+        "regionName": "Western Australia (North Western Interconnected System)",
+        "carbonIntensity": "590",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2017/18 (published in 2019)"
+    },
+    {
+        "location": "AU-WA2",
+        "continentName": "Oceania",
+        "countryName": "Australia",
+        "regionName": "Western Australia (South West Interconnected System)",
+        "carbonIntensity": "730",
+        "Type": "Region",
+        "source": "carbonfootprint (June 2020 v1.4)",
+        "comments": "Figures from 2017/18 (published in 2019)"
+    },
+    {
+        "location": "GM-BJL",
+        "continentName": "Africa",
+        "countryName": "Gambia, The",
+        "regionName": "Any",
+        "carbonIntensity": "700",
+        "Type": "Region",
+        "source": "For Banjul region, Energy mix (https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2013/RRA_Gambia.pdf) and GHG of HFO power plants (https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=13&cad=rja&uact=8&ved=2ahUKEwiP46WT_qjnAhXGOcAKHXnSB1AQFjAMegQIBRAB&url=https%3A%2F%2Fidbinvest.org%2Fen%2Fdownload%2F6253&usg=AOvVaw3_YnEh1UVtiuHlNyCvO4G2)",
+        "comments": ""
+    },
+    {
+        "location": "WORLD",
+        "continentName": "World",
+        "countryName": "Any",
+        "regionName": "Any",
+        "carbonIntensity": "475",
+        "Type": "World",
+        "source": "https://www.iea.org/reports/global-energy-co2-status-report-2019/emissions",
+        "comments": ""
+    },
+    {
+        "location": "TW",
+        "continentName": "Asia",
+        "countryName": "China",
+        "regionName": "Taiwan",
+        "carbonIntensity": "509",
+        "Type": "Region",
+        "source": "https://energypedia.info/wiki/Energy_Transition_in_Taiwan",
+        "comments": ""
+    },
+    {
+        "location": "IL",
+        "continentName": "Asia",
+        "countryName": "Israel",
+        "regionName": "Any",
+        "carbonIntensity": "580",
+        "Type": "Country",
+        "source": "https://www.electricitymap.org (06/10/2020)",
+        "comments": ""
+    }
+]
