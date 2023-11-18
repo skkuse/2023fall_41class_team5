@@ -1,50 +1,88 @@
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import * as childProcess from 'child_process';
-import * as fs from 'fs';
-import { TYPE_PUE, TYPE_PSF, TYPE_SPEC, TYPE_CI, TYPE_REF } from './type/calculate.type';
+import { Injectable } from '@nestjs/common';
+import { PostService } from '../post/post.service';
 import { User } from '@prisma/client';
 import { ResultDto } from './dtos/result.dto';
-import { PrismaService } from '../prisma/prisma.service';
+import { TYPE_PUE, TYPE_PSF, TYPE_SPEC, TYPE_CI, TYPE_REF } from './type/calculate.type';
+import { Post } from '../post/types/post.type';
+import * as childProcess from 'child_process';
+import * as fs from 'fs';
+
 
 @Injectable()
 export class CalculateService {
-  constructor(private readonly prismaService: PrismaService) {}
+  constructor(private readonly postService: PostService) {}
 
-  async saveData(currentUser: User, javaCode: string, result: ResultDto){
-    const userId  = currentUser.id;  
-    const name = this.extractClassName(javaCode);
-    
-    try {
-      await this.prismaService.$transaction(async (tx) => {
-        await tx.executionInfos.create({
-          data: {
-            userId: userId,
-            name: name,
-            code: javaCode,
-            runTime: result.executionTime.toString() + 's',
-            hostName: 'localhost',
-            os: 'Windows',
-            platform: 'win32',
-            arch: 'x64',
-            version: '10.0.10',
-            cores: (result.n_cpu+result.n_gpu).toString(),
-            cpuName: result.cpuType,
-            cpuSpeed: '2.0 GHz',
-            carbonFootprint: result.gCo2.toString() + 'g',
-            energyNeeded: result.kWh.toString() + 'KWh',
-            PUE: this.getPUEByProvider(result.provider).toString(),
-            PSF: this.getPSF().toString(),
-          },
-        });
-      });
-    } catch (e) {
-      console.log(e);
-      throw new InternalServerErrorException();
+  public getResult(javaCode: string, executionTime: number, currentUser: User){
+    /**
+         * javaCode     : 입력받은 자바 코드
+         * coreType     : cpu, gpu, both
+         * cpuType      : cpu 모델명
+         * n_cpu        : cpu core 개수
+         * cpuUsage     : 유저가 입력한 값 or 1
+         * gpuType      : gpu 모델명
+         * n_gpu        : gpu core 개수
+         * gpuUsage     : 유저가 입력한 값 or 1
+         * memAvailable : 가용가능한 메모리
+         * provider     : local, personal 이면 Unknown이고 이외에 gcp, aws, azure가 있음, defaults_PUE.csv 참고
+         * location     : CI_aggregated.csv 참고
+        */
+    const coreType = 'cpu';
+    const cpuType = 'Core i7-8700K'
+    const n_cpu = 8;
+    const cpuUsage = 1;
+    const gpuType = '';
+    const n_gpu = 0;
+    const gpuUsage = 0;
+    const memAvailable = 64;
+    const provider = 'Local server';
+    const location = 'KR';
+    let kWh = 0;
+    let gCo2 = 0;
+    let treeMonths = 0;
+    let driving = 0;
+    let flight = 0;
+
+    if(executionTime > 0){
+      kWh = this.getEnergyNeeded(executionTime, coreType, cpuType, n_cpu, cpuUsage, gpuType, n_gpu, gpuUsage, memAvailable, provider);
+      gCo2 = this.getCarbonFootprint(kWh, location);
+      treeMonths = this.getTreeMonths(gCo2);
+      driving = this.getDriving(gCo2);
+      flight = this.getFlight(gCo2);   
     }
+
+    if(!currentUser){
+      console.log("not defined");
+    }
+
+    if(currentUser){
+      let post: Post;
+      post.userId = currentUser.id;
+      post.name = `${post.userId}_${new Date()}`;
+      post.code = javaCode;
+      post.runTime = executionTime.toString();
+      post.hostName = 'localhost';
+      post.os = 'Windows';
+      post.platform = 'win32';
+      post.arch = 'x64';
+      post.version = '10.0.10';
+      post.cores = n_cpu.toString();
+      post.cpuName = cpuType;
+      post.cpuSpeed = '2.0GHz';
+      post.carbonFootprint = gCo2.toString() + 'g';
+      post.energyNeeded = kWh.toString() + 'KWh';
+      post.PUE = this.getPUEByProvider(provider).toString();
+      post.PSF = this.getPSF().toString();
+
+      this.postService.savePost(post);
+    }
+
+    const ret = new ResultDto(executionTime, coreType, cpuType, n_cpu, cpuUsage, gpuType, n_gpu, gpuUsage, memAvailable, provider, location, kWh, gCo2, treeMonths, driving, flight);
+
+    return ret;
   }
 
   /*return energy needed in kWh*/
-  public getEnergyNeeded(executionTime: number, coreType: string, cpuType: string, n_cpu: number, cpuUsage: number, gpuType: string, n_gpu: number, gpuUsage: number, memAvailable: number, provider: string): number{
+  private getEnergyNeeded(executionTime: number, coreType: string, cpuType: string, n_cpu: number, cpuUsage: number, gpuType: string, n_gpu: number, gpuUsage: number, memAvailable: number, provider: string): number{
     let powerNeededGpu = 0;
     let powerNeededCpu = 0;
     let cpuPower = 0;
@@ -77,22 +115,22 @@ export class CalculateService {
     return energyNeeded;
   }
 
-  public getCarbonFootprint(energyNeeded: number, location: string){
+  private getCarbonFootprint(energyNeeded: number, location: string){
     const carbonIntensity = this.getCarbonIntensity(location);
     return energyNeeded * carbonIntensity;
   }
 
-  public getTreeMonths(gCo2: number){
+  private getTreeMonths(gCo2: number){
     const refValue = this.getRefVal('tree_month');
     return gCo2 * refValue;
   }
 
-  public getDriving(gCo2: number){
+  private getDriving(gCo2: number){
     const refValue = this.getRefVal('passengerCar_US_perkm');
     return gCo2 * refValue;
   }
 
-  public getFlight(gCo2: number){
+  private getFlight(gCo2: number){
     const refValue = this.getRefVal('flight_economy_perkm');
     return gCo2 * refValue;
   }
