@@ -30,3 +30,11 @@ GreenAlgorithm
     ```bash
         npx prisma studio
     ```
+
+## 외부 API(ip2location.io) 사용을 위한 세팅
+
+1. 위에서 설정한 `.env` 파일에 다음과 같은 설정을 추가해줍니다. 
+    ```
+        GEO_KEY="KEY 값"
+    ```
+    1. `GEO_KEY`: `ip2location.io` 사이트에서 새로 계정을 만든 후에 KEY 값을 얻어서 사용합니다. (42F5B8CE2468F718A600FAB0F2A61EC7)
