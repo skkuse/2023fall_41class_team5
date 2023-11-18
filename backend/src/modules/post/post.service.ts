@@ -53,7 +53,7 @@ export class PostService {
             name: post.name,
             code: post.code,
             runTime: post.runTime,
-            hostName: post.runTime,
+            hostName: post.hostName,
             os: post.os,
             platform: post.platform,
             arch: post.arch,
