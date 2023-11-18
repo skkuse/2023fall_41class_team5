@@ -32,7 +32,7 @@ function CodeInput(){
     event.preventDefault();
 
     try {
-      const response = await fetch('/calculate', {
+      const response = await fetch('http://localhost:3306/calculate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
