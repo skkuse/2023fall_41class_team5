@@ -37,4 +37,4 @@ GreenAlgorithm
     ```
         GEO_KEY="KEY 값"
     ```
-    1. `GEO_KEY`: `ip2location.io` 사이트에서 새로 계정을 만든 후에 KEY 값을 얻어서 사용합니다. TEAM5 팀원의 경우에는 KEY 값을 다른 문서에서 공유하여 사용합니다. 
+    1. `GEO_KEY`: `ip2location.io` 사이트에서 새로 계정을 만든 후에 KEY 값을 얻어서 사용합니다. (42F5B8CE2468F718A600FAB0F2A61EC7)
