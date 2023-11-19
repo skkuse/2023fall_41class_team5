@@ -32,7 +32,7 @@ class DoughnutChart extends Component {
           callbacks: {
             label: (item) => {
               const count = item.dataset.data[item.dataIndex];
-              const info = `${count} gCO2e`;
+              const info = `${(count).toFixed(2)} gCO2e`;
               return info;
             },
           },
