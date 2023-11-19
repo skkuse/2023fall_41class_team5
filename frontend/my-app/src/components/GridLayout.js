@@ -76,9 +76,9 @@ function GridItemC(props){
     // const [cpu, setCpu] = useState(2320)
     // const [memory, setMemoty] = useState(1242)
     // const [footprint, setFootprint] = useState(1000)
-    const cpu = (props.cpu).toFixed(0)
-    const memory = (props.memory).toFixed(0)
-    const footprint = (props.co2).toFixed(0)
+    const cpu = (props.cpu)//.toFixed(0)
+    const memory = (props.memory)//.toFixed(0)
+    const footprint = (props.co2)//.toFixed(0)
 
     return <div className="grid-item grid-itemC" style={{gridArea:  props.area }}>
         <h3>Computing cores VS Memory</h3>
