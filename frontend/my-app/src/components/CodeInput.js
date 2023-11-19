@@ -54,7 +54,9 @@ function CodeInput(props){
       const data = await response.json();
       console.log('JAVACODE: ', javaCode);
       console.log('Server Response:', data);
-      props.setData(data)
+      if(data.executionTime >= 0){
+        props.setData(data)
+      }
 
       // 서버 응답에 대한 추가 로직을 여기에 추가할 수 있습니다.
     } catch (error) {
