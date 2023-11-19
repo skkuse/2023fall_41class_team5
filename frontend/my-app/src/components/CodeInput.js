@@ -28,11 +28,18 @@ const editorOptions = {
 function CodeInput(){
   const [javaCode, setJavaCode] = useState("");
 
+  const handleEditorChange = (value, event) => {
+    // 개행 문자를 없애는 부분 추가
+    const formattedJavaCode = value.replace(/(\r\n|\n|\r)/gm, "");
+    setJavaCode(formattedJavaCode);
+  };
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3306/calculate', {
+      const response = await fetch('http://localhost:8000/calculate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -45,6 +52,7 @@ function CodeInput(){
       }
 
       const data = await response.json();
+      console.log('JAVACODE: ', javaCode);
       console.log('Server Response:', data);
 
       // 서버 응답에 대한 추가 로직을 여기에 추가할 수 있습니다.
@@ -64,6 +72,7 @@ function CodeInput(){
               defaultLanguage="java"
               // theme="vs-dark"
               options={editorOptions}
+              onChange={handleEditorChange}
             />
           </CodeContainer>
           <p>
