@@ -35,7 +35,9 @@ function Details(props){
         }
     }
 
-
+    if(data.executionTime < 0){
+        // error
+    }
 
     return (
         <div>
@@ -44,14 +46,14 @@ function Details(props){
             <ul>
                 <li><h5>Runtime : </h5> <span>{secondsToHHMM(data.executionTime)}</span></li>
                 <li><h5>Type of cores : </h5> <span>{data.coreType}</span></li>
-                <li><h5>Number of cores : </h5> <span>{data.n_cpu}</span></li>
-                <li><h5>Model : </h5> <span>{data.cpuType}</span></li>
+                <li><h5>Number of cores : </h5> <span>{data.coreType=='cpu' ? data.n_cpu : data.n_gpu}</span></li>
+                <li><h5>Model : </h5> <span>{data.coreType == 'cpu' ? data.cpuType : data.gpuType}</span></li>
                 <li><h5>memory available (inGB) : </h5> <span>{data.memAvailable}</span></li>
                 <li><h5>Select the platform used for the computations : </h5> <span>{data.provider}</span></li>
                 <li><h5>Select location : </h5> <span>{data.location}</span></li>
-                <li><h5>Do you know the real usage factor of your CPU? : </h5> <span>{data.cpuUsage}</span></li>
-                <li><h5>Do you know the Power Usage Efficiency (PUE) of your data centre? : </h5> <span>{data.PUE}</span></li>
-                <li><h5>Do you want to use a Pragmatic Scaling Factor? : </h5> <span>{data.PSF}</span></li> 
+                <li><h5>{/*Do you know*/} The real usage factor of your CPU? : </h5> <span>{data.cpuUsage}</span></li>
+                <li><h5>{/*Do you know*/} The Power Usage Efficiency (PUE) of your data centre? : </h5> <span>{data.PUE}</span></li>
+                <li><h5>{/*Do you want to use*/} A Pragmatic Scaling Factor? : </h5> <span>{data.PSF}</span></li> 
             </ul>
             {/* <div className='buttondiv'>
                 <input type="submit" value="Reset" onClick={handleResetClick}></input>
