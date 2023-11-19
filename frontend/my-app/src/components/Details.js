@@ -51,9 +51,9 @@ function Details(props){
                 <li><h5>memory available (inGB) : </h5> <span>{data.memAvailable}</span></li>
                 <li><h5>Select the platform used for the computations : </h5> <span>{data.provider}</span></li>
                 <li><h5>Select location : </h5> <span>{data.location}</span></li>
-                <li><h5>{/*Do you know*/} The real usage factor of your CPU? : </h5> <span>{data.cpuUsage}</span></li>
-                <li><h5>{/*Do you know*/} The Power Usage Efficiency (PUE) of your data centre? : </h5> <span>{data.PUE}</span></li>
-                <li><h5>{/*Do you want to use*/} A Pragmatic Scaling Factor? : </h5> <span>{data.PSF}</span></li> 
+                <li><h5>{/*Do you know*/} The real usage factor of your CPU : </h5> <span>{data.cpuUsage}</span></li>
+                <li><h5>{/*Do you know*/} The Power Usage Efficiency (PUE) of your data centre : </h5> <span>{data.PUE}</span></li>
+                <li><h5>{/*Do you want to use*/} A Pragmatic Scaling Factor : </h5> <span>{data.PSF}</span></li> 
             </ul>
             {/* <div className='buttondiv'>
                 <input type="submit" value="Reset" onClick={handleResetClick}></input>
