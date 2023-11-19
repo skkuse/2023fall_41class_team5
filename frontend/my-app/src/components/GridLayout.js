@@ -9,21 +9,21 @@ function GridItemA(props){
     const img_list = ["logo_tree.svg", "logo_car.svg", "logo_plane.svg"]
     
     let mode
-    let unit
+    let unit = props.result
     switch(props.area){
         case 'a' : 
             // 48 pond per year
-            unit = ((props.result)/ 1000) / (21.7724 / 12)
+            //unit = props.treeMonths//((props.result)/ 1000) / (21.7724 / 12)
             mode = 0
             break
         case 'b' :
             // 114.1g CO2/km 
-            unit = (props.result)/ 114.1
+            //unit = props.driving// (props.result)/ 114.1
             mode = 1
             break
         case 'c' :
             // From Paris to London : 1h 15m (312.5kg) , 1h => Co2 250kg 
-            unit = (((props.result) / 1000) / 312.5) * 100
+            //unit = props.flight//(((props.result) / 1000) / 312.5) * 100
             mode = 2
             
     }
@@ -41,15 +41,15 @@ function GridItemB(props){
     const img_list = ["logo_co2.svg", "logo_power.svg"]
     
     let mode
-    let unit 
+    let unit = props.result
     switch(props.area){
         case 'd' : 
-            unit = props.result
+            //unit = props.gCo2//props.result
             mode = 0
             break
         case 'e' :
             // 2022 South Korea 435.69 g CO2e/kWh
-            unit = (props.result) / 435.69
+            //unit = (props.result) / 435.69
             mode = 1
             break
             
@@ -90,18 +90,18 @@ function GridItemC(props){
 }
 
 function GridLayout(props){
-    const memory = props.memory
-    const cpu = props.cpu
-    const co2 = memory + cpu // unit gCo2
+    // const memory = props.memory
+    // const cpu = props.cpu
+    // const co2 = memory + cpu // unit gCo2
 
     return (
       <div className="grid-container">
-        <GridItemA area='a' result={co2}></GridItemA>
-        <GridItemA area='b' result={co2}></GridItemA>
-        <GridItemA area='c' result={co2}></GridItemA>
-        <GridItemB area='d' result={co2}></GridItemB>
-        <GridItemB area='e' result={co2}></GridItemB>
-        <GridItemC memory={memory} cpu={cpu} co2={co2} area='f' ></GridItemC>
+        <GridItemA area='a' result={props.treeMonths}></GridItemA>
+        <GridItemA area='b' result={props.driving}></GridItemA>
+        <GridItemA area='c' result={props.flight}></GridItemA>
+        <GridItemB area='d' result={props.gCo2}></GridItemB>
+        <GridItemB area='e' result={props.kWh}></GridItemB>
+        <GridItemC memory={props.memCo2} cpu={props.cpuCo2} co2={props.gCo2} area='f' ></GridItemC>
         
       </div>
     );

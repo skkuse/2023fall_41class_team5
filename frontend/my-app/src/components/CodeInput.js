@@ -25,7 +25,7 @@ const editorOptions = {
 
 
 
-function CodeInput(){
+function CodeInput(props){
   const [javaCode, setJavaCode] = useState("");
 
   const handleEditorChange = (value, event) => {
@@ -54,6 +54,7 @@ function CodeInput(){
       const data = await response.json();
       console.log('JAVACODE: ', javaCode);
       console.log('Server Response:', data);
+      props.setData(data)
 
       // 서버 응답에 대한 추가 로직을 여기에 추가할 수 있습니다.
     } catch (error) {
