@@ -26,13 +26,28 @@ const editorOptions = {
 
 
 function CodeInput(props){
+  const removeComments = (code) => {
+    // 정규 표현식을 사용하여 주석 제거
+    const withoutComments = code.replace(/\/\/[^\n]*|\/\*[\s\S]*?\*\//g, '');
+    return withoutComments;
+  };
+
   const [javaCode, setJavaCode] = useState("");
+
+  const handleEditorChange = (value, event) => {
+    
+    // 개행 문자를 없애는 부분 추가
+    const formattedJavaCode = removeComments(value).replace(/(\r\n|\n|\r)/gm, "");
+    //console.log('test : ' + formattedJavaCode);
+    setJavaCode(formattedJavaCode);
+  };
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3306/calculate', {
+      const response = await fetch('http://localhost:8000/calculate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -45,6 +60,7 @@ function CodeInput(props){
       }
 
       const data = await response.json();
+      console.log('JAVACODE: ', javaCode);
       console.log('Server Response:', data);
       if(data.executionTime >= 0){
         props.setData(data)
@@ -67,6 +83,7 @@ function CodeInput(props){
               defaultLanguage="java"
               // theme="vs-dark"
               options={editorOptions}
+              onChange={handleEditorChange}
             />
           </CodeContainer>
           <p>
