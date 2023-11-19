@@ -26,20 +26,22 @@ const editorOptions = {
 
 
 function CodeInput(props){
-  const removeComments = (code) => {
-    // 정규 표현식을 사용하여 주석 제거
-    const withoutComments = code.replace(/\/\/[^\n]*|\/\*[\s\S]*?\*\//g, '');
-    return withoutComments;
-  };
+  // const removeComments = (code) => {
+  //   // 정규 표현식을 사용하여 주석 제거
+  //   const withoutComments = code.replace(/\/\/[^\n]*|\/\*[\s\S]*?\*\//g, '');
+  //   return withoutComments;
+  // };
 
   const [javaCode, setJavaCode] = useState("");
 
   const handleEditorChange = (value, event) => {
     // 개행 문자를 없애는 부분 추가
-    const formattedJavaCode = removeComments(value).replace(/(\r\n|\n|\r)/gm, "");
+    // const formattedJavaCode = removeComments(value).replace(/(\r\n|\n|\r)/gm, "");
     //const formattedJavaCode = value.replace(/(\r\n)/gm, "\\r\n").replace(/(\n)/gm, "\\n").replace(/(\r)/gm, "\\r");
     //console.log('test : ' + formattedJavaCode);
-    setJavaCode(formattedJavaCode);
+    // setJavaCode(formattedJavaCode);
+    setJavaCode(value);
+    // 원형 그대로 보기
   };
 
 
