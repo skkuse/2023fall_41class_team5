@@ -2,16 +2,19 @@ import React, { useState }  from 'react';
 import GridLayout from './GridLayout';
 import Details from './Details';
 
+  
+
 function HorizontalLayout(props){
     // props.data
 
-    const [data, setData] = useState({memory : 53.124, cpu : 200.657 , details : ["__H __M", "_", "_", "_", "_", "_", "_", "_", "_", "_"]});
-    //const [data, setData] = useState({memory : 53.124, cpu : 200.657 , details : ["12H 00M", "CPU", "12", "Xeon E5-2683 v4", "64G", "Local Server", "Austria", "NO", "NO", "NO"]});
+    //const [data, setData] = useState(testData);
+    const {data, setData} = props;
+    
 
     return (
       <div className='horizontalLayout' style={{ display: 'flex'}}>
-        <div className='details' style={{ flex: 1 }}><Details data = {data.details} setData={setData}></Details></div>
-        <div style={{ flex: 2}}><GridLayout memory = {data.memory} cpu = {data.cpu}></GridLayout></div>
+        <div className='details' style={{ flex: 1 }}><Details data = {data} setData={setData}></Details></div>
+        <div style={{ flex: 2}}><GridLayout kWh = {data.kWh} gCo2 = {data.gCo2} treeMonths = {data.treeMonths} driving = {data.driving} flight = {data.flight}></GridLayout></div>
       </div>
     );
   }
