@@ -52,9 +52,40 @@ export class CalculateService {
     let treeMonths = 0;
     let driving = 0;
     let flight = 0;
+    let memkWh = 0;
+    let cpukWh = 0;
+    let memCo2 = 0;
+    let cpuCo2 = 0;
 
     if (executionTime > 0) {
       kWh = this.getEnergyNeeded(
+        'both',
+        executionTime,
+        coreType,
+        cpuType,
+        n_cpu,
+        cpuUsage,
+        gpuType,
+        n_gpu,
+        gpuUsage,
+        memAvailable,
+        provider,
+      );
+      memkWh = this.getEnergyNeeded(
+        'mem',
+        executionTime,
+        coreType,
+        cpuType,
+        n_cpu,
+        cpuUsage,
+        gpuType,
+        n_gpu,
+        gpuUsage,
+        memAvailable,
+        provider,
+      );
+      cpukWh = this.getEnergyNeeded(
+        'cpu',
         executionTime,
         coreType,
         cpuType,
@@ -70,6 +101,8 @@ export class CalculateService {
       treeMonths = this.getTreeMonths(gCo2);
       driving = this.getDriving(gCo2);
       flight = this.getFlight(gCo2);
+      memCo2 = this.getCarbonFootprint(memkWh, location);
+      cpuCo2 = this.getCarbonFootprint(cpukWh, location);
     }
 
     const ret = new ResultDto(
@@ -89,6 +122,8 @@ export class CalculateService {
       treeMonths,
       driving,
       flight,
+      memCo2,
+      cpuCo2,
       userId,
       javaCode,
       this.getPUEByProvider(provider).toString(),
@@ -100,6 +135,7 @@ export class CalculateService {
 
   /*return energy needed in kWh*/
   private getEnergyNeeded(
+    returnType: string,
     executionTime: number,
     coreType: string,
     cpuType: string,
@@ -136,9 +172,15 @@ export class CalculateService {
     const powerNeededMem = memAvailable * 0.3725;
     const powerNeeded = powerNeededCore + powerNeededMem;
 
-    const energyNeeded = (executionTime * powerNeeded * PSF) / 1000;
-
-    return energyNeeded;
+    if(returnType === 'cpu'){
+      return (executionTime * powerNeededCore * PSF) / 1000;
+    }
+    else if(returnType === 'mem'){
+      return (executionTime * powerNeededMem * PSF) / 1000;
+    }
+    else{
+      return (executionTime * powerNeeded * PSF) / 1000;
+    }
   }
 
   private getCarbonFootprint(energyNeeded: number, location: string) {
@@ -172,7 +214,7 @@ export class CalculateService {
     fs.writeFileSync(`./code/${fileName}`, javaCode);
 
     const timeoutLimit = 10;
-    const result = await this.executeJavaCode(fileName, timeoutLimit);
+    const result = await this.executeJavaCode(className, fileName, timeoutLimit);
     const executionTime = this.converTimeFormatToSeconds(result);
 
     // ./code 안에 생성된 파일 모두 삭제
@@ -182,6 +224,7 @@ export class CalculateService {
   }
 
   private async executeJavaCode(
+    className: string,
     fileName: string,
     timeoutLimit: number,
   ): Promise<string> {
@@ -190,7 +233,7 @@ export class CalculateService {
 
       process.on('close', (code) => {
         if (code === 0) {
-          const javaExecutionCommand = `sh -c 'time timeout ${timeoutLimit}s java ./code/${fileName}'`;
+          const javaExecutionCommand = `sh -c 'time timeout ${timeoutLimit}s java -cp ./code/ ${className}'`;
           const javaExecution = childProcess.spawn(javaExecutionCommand, {
             shell: true,
           });

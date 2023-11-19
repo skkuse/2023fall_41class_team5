@@ -15,6 +15,8 @@ export class ResultDto {
   treeMonths: number;
   driving: number;
   flight: number;
+  memCo2: number;
+  cpuCo2: number;
   userId: number;
   javaCode: string;
   PUE: string;
@@ -37,6 +39,8 @@ export class ResultDto {
     treeMonths: number,
     driving: number,
     flight: number,
+    memCo2: number,
+    cpuCo2: number,
     userId: number,
     javaCode: string,
     PUE: string,
@@ -58,6 +62,8 @@ export class ResultDto {
     this.treeMonths = treeMonths;
     this.driving = driving;
     this.flight = flight;
+    this.memCo2 = memCo2;
+    this.cpuCo2 = cpuCo2;
     this.userId = userId;
     this.javaCode = javaCode;
     this.PUE = PUE;
