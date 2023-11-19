@@ -101,7 +101,7 @@ function GridLayout(props){
         <GridItemA area='c' result={props.flight}></GridItemA>
         <GridItemB area='d' result={props.gCo2}></GridItemB>
         <GridItemB area='e' result={props.kWh}></GridItemB>
-        <GridItemC memory={123} cpu={45} co2={props.gCo2} area='f' ></GridItemC>
+        <GridItemC memory={props.memCo2} cpu={props.cpuCo2} co2={props.gCo2} area='f' ></GridItemC>
         
       </div>
     );

@@ -19,6 +19,8 @@ const testData = {
   "treeMonths": 5,
   "driving": 200,
   "flight": 2,
+  "memCo2" : 50,
+  "cpuCo2" : 30,
   "userId": 123,
   "javaCode": "YourJavaCode",
   "PUE": "__",
