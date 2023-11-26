@@ -81,7 +81,7 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
           onChange={onChange}
           value={form.password}
         />
-        {type === 'register' && (
+        {type === 'register' && (<>
           <StyledInput
             autoComplete="new-password"
             name="passwordConfirm"
@@ -90,6 +90,32 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
             onChange={onChange}
             value={form.passwordConfirm}
           />
+          <StyledInput
+            autoComplete='name'
+            name='name'
+            placeholder='이름'
+            onChange={onChange}
+            value={form.name}
+          />
+          <StyledInput
+            autoComplete="email"
+            name="emial"
+            placeholder="이메일"
+            onChange={onChange}
+            value={form.email}
+          />
+          <StyledInput
+              type="date"
+              name="birth"
+              autoComplete='birth'
+              onChange={(e) => {
+                const selectedDate = e.target.value;
+                const formattedDate = selectedDate && new Date(selectedDate).toISOString().split('T')[0];
+                onChange({ target: { name: 'birth', value: formattedDate } });
+              }}
+              value={form.birth}
+            />     
+          </>
         )}
         {error && <ErrorMessage>{error}</ErrorMessage>}
         <ButtonWithMarginTop cyan fullWidth style={{ marginTop: '1rem' }}>
