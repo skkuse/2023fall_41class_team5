@@ -238,6 +238,27 @@ margin:0;
   margin: auto;
   background-color: #FFF;
   padding: 20px;
+
+  /* position:relative; */
+}
+
+.record-grid-javacode{
+  white-space: pre;
+  text-align: left;
+  overflow: auto;
+  width: 300px;
+  height: 180px;
+}
+
+.record-grid-result{
+  /* background-color: rgba(231, 255, 238, 0.786); */
+  margin: auto;
+  /* position:absolute; */
+  /* bottom:0px; */
+  text-align: left;
+  font-size: 12pt;
+  /* padding: 12px; */
+  
 }
 
 .page-move{
