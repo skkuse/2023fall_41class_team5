@@ -67,11 +67,11 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
       <h3>{text}</h3>
       <form onSubmit={onSubmit}>
         <StyledInput
-          autoComplete="username"
-          name="username"
+          autoComplete="loginId"
+          name="loginId"
           placeholder="아이디"
           onChange={onChange}
-          value={form.username}
+          value={form.loginId}
         />
         <StyledInput
           autoComplete="new-password"
@@ -99,21 +99,21 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
           />
           <StyledInput
             autoComplete="email"
-            name="emial"
+            name="email"
             placeholder="이메일"
             onChange={onChange}
             value={form.email}
           />
           <StyledInput
               type="date"
-              name="birth"
-              autoComplete='birth'
+              name="birthDay"
+              autoComplete='birthDay'
               onChange={(e) => {
                 const selectedDate = e.target.value;
                 const formattedDate = selectedDate && new Date(selectedDate).toISOString().split('T')[0];
-                onChange({ target: { name: 'birth', value: formattedDate } });
+                onChange({ target: { name: 'birthDay', value: formattedDate } });
               }}
-              value={form.birth}
+              value={form.birthDay}
             />     
           </>
         )}
