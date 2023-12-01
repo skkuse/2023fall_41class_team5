@@ -37,7 +37,7 @@ function GridItem(props) {
        <div className='record-grid-javacode'>{javaCode}</div>
        <hr></hr>
        <div className='record-grid-result'>
-        runtime : {secondsToHHMM(parseInt(runTime))}<br/>
+        runtime : {runTime}s<br/>
         CarbonFootprint : {gCo2} gCo2
        </div>
     

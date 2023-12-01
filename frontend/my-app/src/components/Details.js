@@ -44,7 +44,7 @@ function Details(props){
             <h4>&lt;Details about your algorithm&gt;</h4> 
             <p>To understand how each parameter impacts your carbon footprint, check out the formula below and the methods article</p>
             <ul>
-                <li><h5>Runtime : </h5> <span>{secondsToHHMM(data.executionTime)}</span></li>
+                <li><h5>Runtime : </h5> <span>{data.executionTime}s</span></li>
                 <li><h5>Type of cores : </h5> <span>{data.coreType}</span></li>
                 <li><h5>Number of cores : </h5> <span>{data.coreType=='cpu' ? data.n_cpu : data.n_gpu}</span></li>
                 <li><h5>Model : </h5> <span>{data.coreType == 'cpu' ? data.cpuType : data.gpuType}</span></li>

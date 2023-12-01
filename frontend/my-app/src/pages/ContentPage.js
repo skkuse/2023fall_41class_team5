@@ -3,7 +3,7 @@ import CodeInput from '../components/CodeInput';
 import HorizontalLayout from '../components/HorizontalLayout';
 
 const testData = {
-  "executionTime": 123,
+  "executionTime": "__",
   "coreType": "__",
   "cpuType": "__",
   "n_cpu": '_',
