@@ -246,7 +246,7 @@ function RecordGrid(props) {
     // 3x3 그리드 아이템 생성
     for (let i = pageNum * 9 + 0; i < pageNum * 9 + 9; i++) {
         if (i < recordSize) {
-            gridItems.push(<GridItem keys={gridContents[i]}></GridItem>);
+            gridItems.push(<GridItem key = {i} keys={gridContents[i]}></GridItem>);
         }
     }
 
