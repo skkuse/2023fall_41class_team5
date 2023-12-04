@@ -21,7 +21,7 @@ export class AuthService {
       },
     });
 
-    if (!user || !bcrypt.compare(password, user.password)) {
+    if (!user || !(await bcrypt.compare(password, user.password))) {
       throw new UnauthorizedException('로그인 정보를 확인해주세요');
     }
 
