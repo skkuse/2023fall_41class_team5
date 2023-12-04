@@ -88,8 +88,12 @@ function CodeInput(props) {
           <p>
             <input type='submit' value="Submit"></input>
           </p>
-          <StyledLink to='/login'>결과를 저장하고 싶으면 <u>로그인</u>하세요.→</StyledLink><br />
-          <StyledLink to='/register'>회원가입 →</StyledLink>
+          {!user && (
+            <>
+              <StyledLink to='/login'>결과를 저장하고 싶으면 <u>로그인</u>하세요.→</StyledLink><br />
+              <StyledLink to='/register'>회원가입 →</StyledLink>
+            </>
+          )}
         </form>
       </article>
     </div>
