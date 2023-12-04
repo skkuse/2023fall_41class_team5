@@ -17,6 +17,9 @@ const [LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE] = createRequestActionTypes(
   'auth/LOGIN'
 );
 
+const RESET_AUTH = 'auth/RESET_AUTH';
+export const resetAuth = () => ({ type: RESET_AUTH });
+
 export const changeField = createAction(
   CHANGE_FIELD,
   ({ form, key, value }) => ({
@@ -75,7 +78,7 @@ const auth = handleActions(
       authError: null // 폼 전환 시 회원 인증 에러 초기화
     }),
     // 회원가입 성공
-    [REGISTER_SUCCESS]: (state, { payload: accessToken }) => ({
+    [REGISTER_SUCCESS]: (state, { payload: auth }) => ({
       ...state,
       authError: null,
       auth
@@ -95,9 +98,14 @@ const auth = handleActions(
     [LOGIN_FAILURE]: (state, { payload: error }) => ({
       ...state,
       authError: error
-    })
+    }),
+    [RESET_AUTH]: (state) => ({
+      ...state,
+      auth: null,
+    }), // 중괄호 추가
   },
   initialState
 );
+
 
 export default auth;

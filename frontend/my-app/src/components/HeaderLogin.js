@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import {logout} from '../modules/user.js'
 
-const LogoutBtn = styled.button`
+const HeaderBtn = styled.button`
   display: inline-block;
   margin-left: 15px;
 `;
@@ -20,6 +20,15 @@ const HeaderLogin = () => {
     dispatch(logout());
   };
 
+  const ShowProfile = () => {
+    // 일단은 그냥 사용자 정보 보여주는거 alret()로 대체. 사용자 정보 보여주는 페이지 만들면 될 듯?
+    alert(
+      'name: ' + user.name +
+      '\nemail: ' + user.email +
+      '\nbirth: '+ user.birthDay
+    )
+  }
+
   return (
     <div className="header-login">
       <article>
@@ -27,7 +36,8 @@ const HeaderLogin = () => {
           // 로그인 상태인 경우
           <>
             <span>Welcome, {user.name}!</span>
-            <LogoutBtn onClick={handleLogout}>Logout</LogoutBtn>
+            <HeaderBtn onClick={handleLogout}>Logout</HeaderBtn>
+            <HeaderBtn onClick={ShowProfile}>Profile</HeaderBtn>
           </>
         ) : (
           // 로그인 상태가 아닌 경우
