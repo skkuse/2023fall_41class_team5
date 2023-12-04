@@ -34,11 +34,13 @@ const buttonStyle = css`
         background: lightgreen;
       }
     `}
-
-    &:disabled {
-    background: lightgray;
-    color: darkgray};
-    cursor: not-allowed;
+    ${props =>
+      props.disabled && css`
+      background: lightgray;
+      color: darkgray};
+      cursor: not-allowed;
+      `
+    }
   }
 `;
 

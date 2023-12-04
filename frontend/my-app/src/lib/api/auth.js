@@ -15,6 +15,7 @@ export const login = ({ loginId, password }) =>
   client.post('/auth', { loginId, password })
     .then(response => {
       const { message, accessToken } = response.data;
+      console.log(response.data)
       saveToken(accessToken);
       return { message, accessToken };
     });
