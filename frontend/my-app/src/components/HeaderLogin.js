@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import {logout} from '../modules/user.js'
+import { useNavigate } from 'react-router-dom';
 
 const HeaderBtn = styled.button`
   display: inline-block;
@@ -11,6 +12,7 @@ const HeaderBtn = styled.button`
 
 const HeaderLogin = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { user } = useSelector(({ user }) => ({
     user: user.user,
   }));
@@ -29,6 +31,10 @@ const HeaderLogin = () => {
     )
   }
 
+  const LinktoRecord = () => {
+    navigate('/record')
+  }
+
   return (
     <div className="header-login">
       <article>
@@ -37,6 +43,7 @@ const HeaderLogin = () => {
           <>
             <span>Welcome, {user.name}!</span>
             <HeaderBtn onClick={handleLogout}>Logout</HeaderBtn>
+            <HeaderBtn onClick={LinktoRecord}>Record</HeaderBtn>
             <HeaderBtn onClick={ShowProfile}>Profile</HeaderBtn>
           </>
         ) : (
