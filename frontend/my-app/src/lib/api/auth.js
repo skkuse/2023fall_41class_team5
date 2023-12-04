@@ -49,5 +49,8 @@ export const check = () => {
 export const logout = () => {
   // 토큰 제거
   localStorage.removeItem('accessToken');
+
+  // 사용자 정보 제거
   return Promise.resolve();
 };
+
