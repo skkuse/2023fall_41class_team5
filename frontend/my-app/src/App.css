@@ -238,8 +238,25 @@ margin:0;
   margin: auto;
   background-color: #FFF;
   padding: 20px;
+  overflow-y: auto; /* 수직 스크롤바를 추가합니다. */
+}
 
-  /* position:relative; */
+
+/* ( 크롬, 사파리, 오페라, 엣지 ) 동작 */
+.record-grid-item::-webkit-scrollbar {
+  display: none;
+}
+
+.record-grid-item {
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
+}
+
+/* ( 크롬, 사파리, 오페라, 엣지 ) 동작 */
+.record-grid-item h4{
+  margin-top: -5px;
+  margin-bottom: -5px;
+  color: #064037;
 }
 
 .record-grid-javacode{

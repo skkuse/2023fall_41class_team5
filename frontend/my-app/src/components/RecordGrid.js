@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { loadToken } from '../lib/api/auth';
 
 const ArrowButton = ({ direction, onClick, size }) => {
     const arrowClass = direction === 'left' ? 'left-arrow' : 'right-arrow';
@@ -12,15 +13,6 @@ const ArrowButton = ({ direction, onClick, size }) => {
     );
 };
 
-function secondsToHHMM(seconds) {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-  
-    const hoursString = hours < 10 ? `0${hours}` : `${hours}`;
-    const minutesString = minutes < 10 ? `0${minutes}` : `${minutes}`;
-  
-    return `${hoursString}H ${minutesString}M`;
-  }
 
 function GridItem(props) {
     const content = props.keys
@@ -38,7 +30,7 @@ function GridItem(props) {
        <hr></hr>
        <div className='record-grid-result'>
         runtime : {runTime}s<br/>
-        CarbonFootprint : {gCo2} gCo2
+        CarbonFootprint : {gCo2}
        </div>
     
     </div>
@@ -53,25 +45,21 @@ function RecordGrid(props) {
         ],
         "totalCount": 0 // 조회된 계산결과 갯수
     });
-
     const gridItems = [];
 
     
     const [pageNum, setPageNum] = useState(0);
 
-    useEffect( () => {
-    const fetchData = async (event) => {
-
-
-        event.preventDefault();
-    
+    const getRecord = async () => {
         try {
-          const response = await fetch('http://localhost:8000/post', {
+            const token = loadToken();
+
+            const response = await fetch('http://localhost:8000/post', {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
+              Authorization: `Bearer ${token}`,
             },
-            // body: JSON.stringify({ javaCode }),
           });
     
           if (!response.ok) {
@@ -80,8 +68,9 @@ function RecordGrid(props) {
     
           const data = await response.json();
           console.log('Server Response:', data);
-          if(data.message == "success"){
-            setRecord(data)
+          if (data.message === 'success') {
+            // setRecord 함수를 사용하여 상태를 업데이트
+            setRecord(data);
           }
     
           // 서버 응답에 대한 추가 로직을 여기에 추가할 수 있습니다.
@@ -89,9 +78,13 @@ function RecordGrid(props) {
           console.error('Error:', error);
         }
       };
+    
+      useEffect(() => {
+        // 컴포넌트가 마운트될 때 getRecord 함수를 호출
+        getRecord();
+      }, []); // useEffect의 두 번째 매개변수로 빈 배열을 전달하여 한 번만 실행되도록 설정
+    
 
-      fetchData();
-    }, []);
 
     const gridContents = record.posts;
     const recordSize = record.totalCount;

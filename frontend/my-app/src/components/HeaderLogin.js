@@ -20,6 +20,9 @@ const HeaderLogin = () => {
   const handleLogout = () => {
     // 사용자 정보와 인증 정보 초기화
     dispatch(logout());
+    if(window.location.pathname === '/record'){
+      navigate('') 
+    }
   };
 
   const ShowProfile = () => {
@@ -35,6 +38,10 @@ const HeaderLogin = () => {
     navigate('/record')
   }
 
+  const LinktoMain = () => {
+    navigate('')
+  }
+  
   return (
     <div className="header-login">
       <article>
@@ -43,7 +50,11 @@ const HeaderLogin = () => {
           <>
             <span>Welcome, {user.name}!</span>
             <HeaderBtn onClick={handleLogout}>Logout</HeaderBtn>
-            <HeaderBtn onClick={LinktoRecord}>Record</HeaderBtn>
+            {window.location.pathname === '/record' ?
+            (<HeaderBtn onClick={LinktoMain}>Main</HeaderBtn>)
+            :
+            (<HeaderBtn onClick={LinktoRecord}>Record</HeaderBtn>)
+            }
             <HeaderBtn onClick={ShowProfile}>Profile</HeaderBtn>
           </>
         ) : (
