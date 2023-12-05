@@ -53,3 +53,23 @@ export const logout = () => {
   return Promise.resolve();
 };
 
+export const getRecord = () => {
+  const token = loadToken();
+  if (!token) {
+    return Promise.resolve(null);
+  }
+
+  return client.get('/post', {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  })
+  .then(response => {
+    const user = response.data;
+    return user;
+  })
+  .catch(error => {
+    console.error('기록 확인 실패:', error);
+    return null;
+  });
+};
