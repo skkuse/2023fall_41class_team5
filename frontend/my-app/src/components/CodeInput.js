@@ -18,6 +18,19 @@ const StyledLink = styled(Link)`
   display: inline-block;
   margin-bottom: 5px;
 `
+const SubmitBtn = styled.input`
+  margin-top: 4px;
+  display: inline-block;
+  margin-left: 15px;
+  margin-right: 5px;
+  padding: 0.25rem 1rem;
+  color: white;
+  background-color: seagreen;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+`;
 
 const editorOptions = {
   fontSize: 15,
@@ -86,7 +99,7 @@ function CodeInput(props) {
             />
           </CodeContainer>
           <p>
-            <input type='submit' value="Submit"></input>
+            <SubmitBtn type='submit' value="Submit"></SubmitBtn>
           </p>
           {!user && (
             <>

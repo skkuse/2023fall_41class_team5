@@ -6,8 +6,17 @@ import {logout} from '../modules/user.js'
 import { useNavigate } from 'react-router-dom';
 
 const HeaderBtn = styled.button`
+  margin-top: 4px;
   display: inline-block;
   margin-left: 15px;
+  margin-right: 5px;
+  padding: 0.25rem 1rem;
+  color: white;
+  background-color: seagreen;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
 `;
 
 const HeaderLogin = () => {
@@ -38,6 +47,13 @@ const HeaderLogin = () => {
     navigate('/record')
   }
 
+  const LinktoLogin = () => {
+    navigate('/login')
+  }
+  const LinktoRegister = () => {
+    navigate('/register')
+  }
+
   const LinktoMain = () => {
     navigate('')
   }
@@ -60,9 +76,8 @@ const HeaderLogin = () => {
         ) : (
           // 로그인 상태가 아닌 경우
           <form onSubmit={(event) => { /* Handle form submission if needed */ }}>
-            <Link to='/login'>Log In →</Link>
-            <span> | </span>
-            <Link to='/register'>Register →</Link>
+            <HeaderBtn onClick={LinktoLogin}>Login</HeaderBtn>
+            <HeaderBtn onClick={LinktoRegister}>Logout</HeaderBtn>
           </form>
         )}
       </article>
