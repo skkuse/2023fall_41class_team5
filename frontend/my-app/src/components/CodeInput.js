@@ -14,7 +14,7 @@ const CodeContainer = styled.div`
 `
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  color: darkgreen;
   display: inline-block;
   margin-bottom: 5px;
 `
@@ -103,8 +103,7 @@ function CodeInput(props) {
           </p>
           {!user && (
             <>
-              <StyledLink to='/login'>결과를 저장하고 싶으면 <u>로그인</u>하세요.→</StyledLink><br />
-              <StyledLink to='/register'>회원가입 →</StyledLink>
+              결과를 저장하고 싶으면 <StyledLink to = '/login'><u>로그인</u></StyledLink> 하세요.
             </>
           )}
         </form>
