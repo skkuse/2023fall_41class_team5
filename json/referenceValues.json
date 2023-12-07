@@ -1,0 +1,62 @@
+[
+  {
+    "variable": "memoryPower",
+    "value": "0.3725",
+    "source": "in W/GB from http://dl.acm.org/citation.cfm?doid=3076113.3076117 and https://www.tomshardware.com/uk/reviews/intel-core-i7-5960x-haswell-e-cpu,3918-13.html"
+  },
+  {
+    "variable": "passengerCar_EU_perkm",
+    "value": "175",
+    "source": "in gCO2/km from http://www.sciencedirect.com/science/article/pii/S1352231018307295 and https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2019"
+  },
+  {
+    "variable": "passengerCar_US_perkm",
+    "value": "251",
+    "source": "in gCO2/km from https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle"
+  },
+  {
+    "variable": "train_perkm",
+    "value": "41",
+    "source": "in gCO2/km, but more like 5-37g, from https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2020"
+  },
+  {
+    "variable": "flight_economy_perkm",
+    "value": "171",
+    "source": "in gCO2/km, but more like 139-244g, from https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2020"
+  },
+  {
+    "variable": "treeYear",
+    "value": "11000",
+    "source": "in gCO2/tree/year from http://www.sciencedirect.com/science/article/pii/S0269749101002640"
+  },
+  {
+    "variable": "flight_NY-SF",
+    "value": "570000",
+    "source": "gCO2e from https://calculator.carbonfootprint.com/calculator.aspx?tab=3"
+  },
+  {
+    "variable": "flight_PAR-LON",
+    "value": "50000",
+    "source": "gCO2e from https://calculator.carbonfootprint.com/calculator.aspx?tab=3"
+  },
+  {
+    "variable": "flight_NYC-MEL",
+    "value": "2310000",
+    "source": "gCO2e from https://calculator.carbonfootprint.com/calculator.aspx?tab=3"
+  },
+  {
+    "variable": "streaming_netflix_perhour",
+    "value": "36",
+    "source": "gCO2 from https://www.carbonbrief.org/factcheck-what-is-the-carbon-footprint-of-streaming-video-on-netflix (update)"
+  },
+  {
+    "variable": "google_search",
+    "value": "10",
+    "source": "gCO2 from http://www.janavirgin.com/CO2/CO2GLE_about.html"
+  },
+  {
+    "variable": "tree_month",
+    "value": "917",
+    "source": "gCO2 same source as treeYear"
+  }
+]

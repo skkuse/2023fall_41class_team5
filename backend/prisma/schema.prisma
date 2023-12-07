@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              Int       @id @default(autoincrement())
+  loginId         String    @unique
+  password        String
+  email           String    @unique
+  name            String
+  birthDay        DateTime  @db.Date
+
+  executionInfos  ExecutionInfos[]
+
+  @@map("user")
+}
+
+model ExecutionInfos {
+  id                Int     @id @default(autoincrement())
+  name              String                          // 실행정보 제목. 따로 적지 않을 시에 날짜에 기반하여 생성됨.
+  code              String  @db.Text                // 코드 내용.
+  runTime           String                          // 실행 시간
+  hostName          String                          // 호스트 이름(로컬 서버 or 특정 서버)
+  os                String                          // 서버 운영체제
+  platform          String                          // 운영체제 플랫폼
+  arch              String                          // 운영체제 아키텍처
+  version           String                          // 운영체제 버전
+  cores             String                          // cpu 코어 갯수
+  cpuName           String                          // cpu 모델 이름
+  cpuSpeed          String                          // cpu 클럭 속도
+  carbonFootprint   String                          // 탄소 배출량
+  energyNeeded      String                          // 필요 전력량
+  PUE               String  @default("1.67")        // 에너지 효율성. 보통 localhost 에서 실행시키기 때문에 Unknown 인 1.67 로 했음.
+  PSF               String  @default("1")           // PSF. default 는 무조건 1임.         
+
+  user      User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    Int?
+
+  @@map("execution_infos")
+}

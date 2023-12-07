@@ -1,0 +1,135 @@
+[
+  {
+    "model": "NVIDIA Jetson AGX Xavier",
+    "TDP": "30",
+    "n_cores": "",
+    "TDP_per_core": "30",
+    "source": "https://www.techpowerup.com/gpu-specs/jetson-agx-xavier.c3232"
+  },
+  {
+    "model": "NVIDIA Tesla T4",
+    "TDP": "70",
+    "n_cores": "",
+    "TDP_per_core": "70",
+    "source": "https://www.techpowerup.com/gpu-specs/tesla-t4.c3316"
+  },
+  {
+    "model": "AMD RX480",
+    "TDP": "150",
+    "n_cores": "",
+    "TDP_per_core": "150",
+    "source": "techpowerup.com"
+  },
+  {
+    "model": "NVIDIA GTX 1080",
+    "TDP": "180",
+    "n_cores": "",
+    "TDP_per_core": "180",
+    "source": "techpowerup.com"
+  },
+  {
+    "model": "TPU v3",
+    "TDP": "200",
+    "n_cores": "",
+    "TDP_per_core": "200",
+    "source": "https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/"
+  },
+  {
+    "model": "Any",
+    "TDP": "",
+    "n_cores": "",
+    "TDP_per_core": "200",
+    "source": ""
+  },
+  {
+    "model": "NVIDIA RTX 2080",
+    "TDP": "215",
+    "n_cores": "",
+    "TDP_per_core": "215",
+    "source": "techpowerup.com"
+  },
+  {
+    "model": "NVIDIA RTX 2080 Ti",
+    "TDP": "250",
+    "n_cores": "",
+    "TDP_per_core": "250",
+    "source": "techpowerup.com"
+  },
+  {
+    "model": "NVIDIA GTX 1080 Ti",
+    "TDP": "250",
+    "n_cores": "",
+    "TDP_per_core": "250",
+    "source": "techpowerup.com"
+  },
+  {
+    "model": "NVIDIA Titan V",
+    "TDP": "250",
+    "n_cores": "",
+    "TDP_per_core": "250",
+    "source": "techpowerup.com"
+  },
+  {
+    "model": "TPU v2",
+    "TDP": "250",
+    "n_cores": "",
+    "TDP_per_core": "250",
+    "source": "https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/"
+  },
+  {
+    "model": "NVIDIA GTX TITAN X",
+    "TDP": "250",
+    "n_cores": "",
+    "TDP_per_core": "250",
+    "source": "techpowerup.com"
+  },
+  {
+    "model": "NVIDIA TITAN X Pascal",
+    "TDP": "250",
+    "n_cores": "",
+    "TDP_per_core": "250",
+    "source": "techpowerup.com"
+  },
+  {
+    "model": "NVIDIA Tesla P100 PCIe",
+    "TDP": "250",
+    "n_cores": "",
+    "TDP_per_core": "250",
+    "source": "techpowerup.com"
+  },
+  {
+    "model": "NVIDIA Tesla V100",
+    "TDP": "300",
+    "n_cores": "",
+    "TDP_per_core": "300",
+    "source": "techpowerup.com"
+  },
+  {
+    "model": "TPU v3 pod",
+    "TDP": "288000",
+    "n_cores": "",
+    "TDP_per_core": "288000",
+    "source": "https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/"
+  },
+  {
+    "model": "NVIDIA A100 PCIe",
+    "TDP": "250",
+    "n_cores": "",
+    "TDP_per_core": "250",
+    "source": "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/a100-80gb-datasheet-update-nvidia-us-1521051-r2-web.pdf"
+  },
+  {
+    "model": "NVIDIA Tesla P4",
+    "TDP": "75",
+    "n_cores": "",
+    "TDP_per_core": "75",
+    "source": "https://www.techpowerup.com/gpu-specs/tesla-p4.c2879"
+  },
+  {
+    "model": "NVIDIA Tesla K80",
+    "TDP": "300",
+    "n_cores": "",
+    "TDP_per_core": "300",
+    "source": "https://www.techpowerup.com/gpu-specs/tesla-k80.c2616"
+  }
+]
