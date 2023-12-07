@@ -1,7 +1,7 @@
 # 소프트웨어공학개론 Team5
-GreenAlgorithm
+Ecode helper
 
-## DB 세팅 방법
+## DB 최초 세팅 방법
 
 1. `.env` 파일을 `backend` 디렉토리에 생성합니다.
 2. `.env` 파일을 다음과 같이 작성합니다.
